@@ -1,0 +1,29 @@
+<svg width="520" height="280" viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ameyali Foundation A monogram">
+  <defs>
+    <style>
+      .ink{fill:#2A1D12}.saddle{fill:#5A3D24}.grass{fill:#5C7548}.cream{fill:#F5EDDC}
+      .word{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em}
+      .sub{font-family:'DM Sans',system-ui,sans-serif;font-weight:600;letter-spacing:0.24em}
+    </style>
+  </defs>
+  <rect width="520" height="280" class="cream"/>
+  <!-- Big serif A built from two strokes -->
+  <g transform="translate(118,150)">
+    <!-- left leg -->
+    <path class="ink" d="M-4,68 L-46,68 L-12,-58 L12,-58 L-4,68 Z"/>
+    <!-- right leg -->
+    <path class="ink" d="M4,68 L46,68 L12,-58 L-12,-58 L4,68 Z" transform="scale(-1,1)"/>
+    <!-- Actually build A cleanly: two angled bars + counter -->
+  </g>
+  <!-- cleaner A -->
+  <g transform="translate(118,150)">
+    <rect width="520" height="280" x="-200" y="-200" class="cream"/>
+    <!-- left stroke -->
+    <polygon class="ink" points="-6,-62 6,-62 44,70 22,70 0,-20 -22,70 -44,70"/>
+    <!-- sombrero as the crossbar -->
+    <ellipse class="grass" cx="0" cy="22" rx="42" ry="7"/>
+    <path class="grass" d="M-15,22 C-15,6 -7,-3 0,-3 C7,-3 15,6 15,22 Z"/>
+  </g>
+  <text x="210" y="130" class="word ink" font-size="44">Ameyali</text>
+  <text x="212" y="166" class="word saddle" font-size="22">FOUNDATION</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg width="600" height="320" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="320" fill="#F5EDDC"/>
+  <!-- V2: Minimal mark — just sombrero + flowing skirt silhouette (no horse, abstracted rider) -->
+  <g transform="translate(120,160)">
+    <!-- flowing skirt: elegant bell/triangle -->
+    <path d="M0,-30 C-6,-20 -60,40 -66,80 C-40,96 40,96 66,80 C60,40 6,-20 0,-30 Z" fill="#2A1D12"/>
+    <!-- skirt tiers (escaramuza detail) -->
+    <path d="M-48,52 C-20,62 20,62 48,52" fill="none" stroke="#F5EDDC" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-56,68 C-24,78 24,78 56,68" fill="none" stroke="#F5EDDC" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-62,82 C-28,92 28,92 62,82" fill="none" stroke="#F5EDDC" stroke-width="2" stroke-linecap="round"/>
+    <!-- torso (implied) -->
+    <ellipse cx="0" cy="-38" rx="12" ry="16" fill="#2A1D12"/>
+    <!-- head -->
+    <circle cx="0" cy="-58" r="10" fill="#2A1D12"/>
+    <!-- sombrero -->
+    <ellipse cx="0" cy="-64" rx="38" ry="7.5" fill="#5C7548"/>
+    <path d="M-14,-64 C-14,-82 -4,-92 0,-92 C4,-92 14,-82 14,-64 Z" fill="#5C7548"/>
+  </g>
+  <text x="220" y="130" font-family="'Fraunces',Georgia,serif" font-weight="600" font-size="52" letter-spacing="-0.5" fill="#2A1D12">Ameyali</text>
+  <text x="222" y="174" font-family="'Fraunces',Georgia,serif" font-weight="500" font-size="30" fill="#5A3D24">Foundation</text>
+  <line x1="223" y1="194" x2="500" y2="194" stroke="#5C7548" stroke-width="2"/>
+  <text x="224" y="216" font-family="'DM Sans',sans-serif" font-weight="600" font-size="12" letter-spacing="3" fill="#5C7548">ESCARAMUZA CHARRA</text>
+</svg>

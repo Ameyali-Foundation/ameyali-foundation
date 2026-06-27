@@ -1,0 +1,29 @@
+<svg width="600" height="320" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="320" fill="#F5EDDC"/>
+  <!-- V3: Stylized horse head profile with sombrero resting on it -->
+  <g transform="translate(122,158)">
+    <!-- horse head in profile, facing left — long face, pointed ears -->
+    <!-- main head shape -->
+    <path d="M-10,60 C-26,50 -42,28 -48,4 C-52,-14 -48,-36 -36,-54
+             C-28,-64 -14,-70 -4,-68 C4,-66 8,-58 6,-48
+             C10,-54 18,-58 24,-52 C30,-46 28,-36 22,-30
+             L18,-24 C26,-16 30,-2 28,12
+             C26,28 16,46 8,56 L-10,60 Z" fill="#2A1D12"/>
+    <!-- nostril -->
+    <ellipse cx="-38" cy="30" rx="5" ry="7" fill="#F5EDDC" opacity="0.3"/>
+    <!-- eye -->
+    <circle cx="-6" cy="-24" r="4" fill="#F5EDDC"/>
+    <circle cx="-6" cy="-24" r="2" fill="#2A1D12"/>
+    <!-- bridle line -->
+    <path d="M-42,22 C-30,18 -14,-8 -10,-22" fill="none" stroke="#5C7548" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- mane swoosh -->
+    <path d="M10,-44 C22,-58 34,-64 42,-58 C36,-50 28,-42 18,-36" fill="#2A1D12"/>
+    <!-- sombrero floating above/behind -->
+    <ellipse cx="-2" cy="-74" rx="36" ry="6.5" fill="#5C7548"/>
+    <path d="M-14,-74 C-14,-90 -6,-98 -2,-98 C2,-98 10,-90 10,-74 Z" fill="#5C7548"/>
+  </g>
+  <text x="210" y="128" font-family="'Fraunces',Georgia,serif" font-weight="600" font-size="52" letter-spacing="-0.5" fill="#2A1D12">Ameyali</text>
+  <text x="212" y="172" font-family="'Fraunces',Georgia,serif" font-weight="500" font-size="30" fill="#5A3D24">Foundation</text>
+  <line x1="213" y1="192" x2="500" y2="192" stroke="#5C7548" stroke-width="2"/>
+  <text x="214" y="214" font-family="'DM Sans',sans-serif" font-weight="600" font-size="12" letter-spacing="3" fill="#5C7548">ESCARAMUZA CHARRA</text>
+</svg>

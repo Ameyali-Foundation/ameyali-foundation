@@ -1,0 +1,46 @@
+<svg width="600" height="320" viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="320" fill="#F5EDDC"/>
+  <!-- Stylized side-view rider: horse + side-saddle rider + sombrero, very simplified -->
+  <g transform="translate(130,164)">
+    <!-- horse body: elegant curved bean shape -->
+    <ellipse cx="0" cy="22" rx="62" ry="38" fill="#2A1D12"/>
+    <!-- front legs: two angled lines -->
+    <path d="M-28,52 L-36,118 L-30,118 L-18,58" fill="#2A1D12"/>
+    <path d="M-14,54 L-20,118 L-14,118 L-4,58" fill="#2A1D12"/>
+    <!-- back legs -->
+    <path d="M22,54 L18,118 L24,118 L32,56" fill="#2A1D12"/>
+    <path d="M38,50 L40,118 L46,118 L48,50" fill="#2A1D12"/>
+    <!-- hooves: small ovals -->
+    <ellipse cx="-33" cy="120" rx="5" ry="3" fill="#2A1D12"/>
+    <ellipse cx="-17" cy="120" rx="5" ry="3" fill="#2A1D12"/>
+    <ellipse cx="21" cy="120" rx="5" ry="3" fill="#2A1D12"/>
+    <ellipse cx="43" cy="120" rx="5" ry="3" fill="#2A1D12"/>
+    <!-- neck: upward curve -->
+    <path d="M-40,8 C-52,-14 -54,-48 -42,-68 C-36,-72 -28,-70 -24,-62 L-28,4 Z" fill="#2A1D12"/>
+    <!-- head -->
+    <path d="M-42,-68 C-50,-72 -56,-80 -52,-88 C-48,-94 -38,-94 -32,-86 C-28,-78 -26,-68 -24,-62 C-30,-62 -38,-64 -42,-68 Z" fill="#2A1D12"/>
+    <!-- ear -->
+    <path d="M-38,-88 L-34,-100 L-28,-88 Z" fill="#2A1D12"/>
+    <!-- tail -->
+    <path d="M58,14 C70,8 78,16 76,30 C74,42 66,50 58,46" fill="none" stroke="#2A1D12" stroke-width="5" stroke-linecap="round"/>
+    <!-- RIDER: side-saddle, elegant -->
+    <!-- skirt flowing down right side (bell shape) -->
+    <path d="M-10,-14 C10,-18 40,-6 52,16 C58,28 52,48 44,56 L8,56 C2,40 -8,14 -10,-14 Z" fill="#5C7548"/>
+    <!-- skirt stripe detail -->
+    <path d="M20,40 C32,42 44,38 48,28" fill="none" stroke="#F5EDDC" stroke-width="2.5"/>
+    <path d="M14,50 C28,52 42,48 46,40" fill="none" stroke="#F5EDDC" stroke-width="2"/>
+    <!-- torso -->
+    <path d="M-10,-14 C-14,-30 -10,-50 0,-56 C10,-60 16,-50 14,-36 C12,-24 2,-16 -10,-14 Z" fill="#2A1D12"/>
+    <!-- head -->
+    <circle cx="4" cy="-64" r="9" fill="#2A1D12"/>
+    <!-- sombrero: wide brim + dome -->
+    <ellipse cx="4" cy="-70" rx="30" ry="6" fill="#E5D5B7"/>
+    <path d="M-8,-70 C-8,-84 -2,-92 4,-92 C10,-92 16,-84 16,-70 Z" fill="#E5D5B7"/>
+    <ellipse cx="4" cy="-70" rx="30" ry="6" fill="none" stroke="#2A1D12" stroke-width="1" opacity="0.3"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="230" y="136" font-family="'Fraunces',Georgia,serif" font-weight="600" font-size="52" letter-spacing="-0.5" fill="#2A1D12">Ameyali</text>
+  <text x="232" y="180" font-family="'Fraunces',Georgia,serif" font-weight="500" font-size="30" fill="#5A3D24">Foundation</text>
+  <line x1="233" y1="198" x2="500" y2="198" stroke="#5C7548" stroke-width="2"/>
+  <text x="234" y="220" font-family="'DM Sans',sans-serif" font-weight="600" font-size="12" letter-spacing="3" fill="#5C7548">ESCARAMUZA CHARRA</text>
+</svg>

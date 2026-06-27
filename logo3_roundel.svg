@@ -1,0 +1,38 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ameyali Foundation seal">
+  <defs>
+    <style>
+      .ink{fill:#2A1D12}.saddle{fill:#5A3D24}.grass{fill:#5C7548}.cream{fill:#F5EDDC}
+      .seal{font-family:'DM Sans',system-ui,sans-serif;font-weight:600;letter-spacing:0.18em;fill:#2A1D12}
+      .year{font-family:'Fraunces',Georgia,serif;font-weight:500;fill:#5A3D24}
+    </style>
+    <path id="top" d="M 160,160 m -118,0 a 118,118 0 1,1 236,0" fill="none"/>
+    <path id="bot" d="M 42,160 a 118,118 0 0,0 236,0" fill="none"/>
+  </defs>
+  <rect width="320" height="320" class="cream"/>
+  <!-- outer rings -->
+  <circle cx="160" cy="160" r="148" fill="none" stroke="#2A1D12" stroke-width="2"/>
+  <circle cx="160" cy="160" r="128" fill="none" stroke="#5C7548" stroke-width="6"/>
+  <circle cx="160" cy="160" r="118" fill="none" stroke="#2A1D12" stroke-width="1.5"/>
+  <!-- circular text -->
+  <text class="seal" font-size="17"><textPath href="#top" startOffset="50%" text-anchor="middle">AMEYALI FOUNDATION</textPath></text>
+  <text class="seal" font-size="13"><textPath href="#bot" startOffset="50%" text-anchor="middle">GILROY · CALIFORNIA</textPath></text>
+  <!-- center: 8 riders as 8 dots in lienzo formation around a small ring -->
+  <g transform="translate(160,160)">
+    <circle r="54" class="ink"/>
+    <g fill="#F5EDDC">
+      <!-- 8 markers in a circle = the 8 escaramuza riders -->
+      <circle cx="0" cy="-38" r="7"/>
+      <circle cx="27" cy="-27" r="7"/>
+      <circle cx="38" cy="0" r="7"/>
+      <circle cx="27" cy="27" r="7"/>
+      <circle cx="0" cy="38" r="7"/>
+      <circle cx="-27" cy="27" r="7"/>
+      <circle cx="-38" cy="0" r="7"/>
+      <circle cx="-27" cy="-27" r="7"/>
+    </g>
+    <circle r="11" fill="#5C7548"/>
+  </g>
+  <!-- side stars -->
+  <text class="year" x="40" y="166" font-size="16">★</text>
+  <text class="year" x="266" y="166" font-size="16">★</text>
+</svg>

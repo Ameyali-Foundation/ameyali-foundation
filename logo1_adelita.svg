@@ -1,0 +1,26 @@
+<svg width="520" height="280" viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ameyali Foundation rider emblem">
+  <defs>
+    <style>
+      .ink{fill:#2A1D12}.saddle{fill:#5A3D24}.grass{fill:#5C7548}.cream{fill:#F5EDDC}.sand{fill:#E5D5B7}
+      .word{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em}
+      .sub{font-family:'DM Sans',system-ui,sans-serif;font-weight:600;letter-spacing:0.24em}
+    </style>
+  </defs>
+  <rect width="520" height="280" class="cream"/>
+  <g transform="translate(160,92)">
+    <circle cx="0" cy="0" r="74" class="ink"/>
+    <circle cx="0" cy="0" r="74" fill="none" stroke="#5C7548" stroke-width="2.5"/>
+    <g transform="translate(0,6)">
+      <path class="cream" d="M-2,8 L-40,44 C-20,52 22,52 42,44 L8,8 Z"/>
+      <path class="grass" d="M-30,36 C-12,42 24,42 34,36 L30,30 C16,35 -8,35 -22,30 Z"/>
+      <path class="cream" d="M-2,8 C-6,-6 -2,-20 8,-24 L14,-20 C18,-8 14,4 8,10 Z"/>
+      <circle class="cream" cx="6" cy="-30" r="7"/>
+      <ellipse class="grass" cx="6" cy="-34" rx="22" ry="4.5"/>
+      <path class="grass" d="M-3,-34 C-3,-44 1,-49 6,-49 C11,-49 15,-44 15,-34 Z"/>
+    </g>
+  </g>
+  <text x="262" y="86" class="word ink" font-size="42">Ameyali</text>
+  <text x="262" y="126" class="word saddle" font-size="27">Foundation</text>
+  <line x1="263" y1="142" x2="455" y2="142" stroke="#5C7548" stroke-width="2"/>
+  <text x="263" y="160" class="sub grass" font-size="9.5">ESCARAMUZA CHARRA</text>
+</svg>
