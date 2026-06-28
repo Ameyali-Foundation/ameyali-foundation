@@ -4,7 +4,11 @@
   "scripts": {
     "cf:whoami": "wrangler whoami",
     "cf:deploy": "wrangler pages deploy . --project-name ameyali-foundation --branch main",
-    "cf:deploy:preview": "wrangler pages deploy . --project-name ameyali-foundation --branch preview"
+    "cf:deploy:preview": "wrangler pages deploy . --project-name ameyali-foundation --branch preview",
+    "cf:domains:list": "bash scripts/cf-pages-domain-list.sh",
+    "cf:domain:add": "bash scripts/cf-pages-domain-add.sh",
+    "cf:dns:upsert": "bash scripts/cf-dns-record-upsert.sh",
+    "cf:verify": "bash scripts/cf-verify.sh"
   },
   "devDependencies": {
     "wrangler": "^4.105.0"

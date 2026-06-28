@@ -3,3 +3,6 @@ mnt/
 .DS_Store
 node_modules/
 .wrangler/
+.env
+.env.local
+.env.*.local
