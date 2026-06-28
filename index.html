@@ -94,11 +94,12 @@ h3.display{font-size:clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem)}
   .hero{min-height:min(96vh, 860px)}
   .hero-backdrop{
     display:block;
+    background-image:url('brand/hero-extended-ai.jpg');
     background-repeat:no-repeat;
     background-size:cover;
-    background-position:center 28%;
-    filter:blur(18px) saturate(1) brightness(.78);
-    transform:scale(1.08);
+    background-position:center 18%;
+    filter:blur(10px) saturate(1.02) brightness(.8);
+    transform:scale(1.05);
   }
   .hero-img{
     background-size:min(68vw, 1100px) auto;
@@ -824,12 +825,6 @@ function setLang(lang){
   });
 }
 langButtons.forEach(b => b.addEventListener('click', () => { setLang(b.getAttribute('data-set-lang')); refreshProviderUI(); }));
-
-const heroImg = document.querySelector('.hero-img');
-const heroBackdrop = document.querySelector('.hero-backdrop');
-if (heroImg && heroBackdrop){
-  heroBackdrop.style.backgroundImage = getComputedStyle(heroImg).backgroundImage;
-}
 
 /* ---------- DONATE MODAL ---------- */
 const donateModal = document.getElementById('donateModal');
