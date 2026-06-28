@@ -1,3 +1,5 @@
 *.zip
 mnt/
 .DS_Store
+node_modules/
+.wrangler/

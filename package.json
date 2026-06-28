@@ -1,0 +1,12 @@
+{
+  "name": "ameyali-foundation-site",
+  "private": true,
+  "scripts": {
+    "cf:whoami": "wrangler whoami",
+    "cf:deploy": "wrangler pages deploy . --project-name ameyali-foundation --branch main",
+    "cf:deploy:preview": "wrangler pages deploy . --project-name ameyali-foundation --branch preview"
+  },
+  "devDependencies": {
+    "wrangler": "^4.105.0"
+  }
+}
