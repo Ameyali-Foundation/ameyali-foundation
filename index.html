@@ -757,14 +757,14 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 
       <div id="providerFallback">
         <div class="notify-fallback">
-          <span class="badge" data-en="Coming soon" data-es="Próximamente">Coming soon</span>
-          <h4 data-en="Online donations launching shortly" data-es="Donaciones en línea próximamente">Online donations launching shortly</h4>
-          <p data-en="We're finishing the setup with our donation platform. Leave your email and we'll let you know the moment donations open." data-es="Estamos terminando la configuración con nuestra plataforma. Déjanos tu correo y te avisaremos en cuanto se habiliten las donaciones.">We're finishing the setup with our donation platform. Leave your email and we'll let you know the moment donations open.</p>
+          <span class="badge" data-en="Stay connected" data-es="Mantente al tanto">Stay connected</span>
+          <h4 data-en="Get notified about upcoming performances" data-es="Recibe avisos de próximas presentaciones">Get notified about upcoming performances</h4>
+          <p data-en="Leave your email and we'll let you know about our next performance, community events, and ways to get involved." data-es="Estamos terminando la configuración con nuestra plataforma. Déjanos tu correo y te avisaremos en cuanto se habiliten las donaciones.">We're finishing the setup with our donation platform. Leave your email and we'll let you know the moment donations open.</p>
           <form class="notify-input-row" id="notifyForm" novalidate>
             <input type="email" required class="notify-input" placeholder="you@email.com" aria-label="Email address">
-            <button type="submit" class="notify-submit" data-en="Notify me" data-es="Avísame">Notify me</button>
+            <button type="submit" class="notify-submit" data-en="Keep me posted" data-es="Avísame">Keep me posted</button>
           </form>
-          <div class="notify-success" id="notifySuccess" data-en="Thanks — we'll be in touch as soon as donations open." data-es="Gracias — te avisaremos en cuanto se habiliten las donaciones.">Thanks — we'll be in touch as soon as donations open.</div>
+          <div class="notify-success" id="notifySuccess" data-en="You're on the list — we'll be in touch before the next performance." data-es="Gracias — te avisaremos en cuanto se habiliten las donaciones.">Thanks — we'll be in touch as soon as donations open.</div>
         </div>
         <p class="provider-note" data-en="In the meantime, you can give in person at any performance. Note: 501(c)(3) tax-exempt status is still pending, so gifts are not yet tax-deductible." data-es="Mientras tanto, puedes donar en persona en cualquier presentación. Nota: el estatus 501(c)(3) sigue en trámite, por lo que las donaciones aún no son deducibles de impuestos.">In the meantime, you can give in person at any performance. Note: 501(c)(3) tax-exempt status is still pending, so gifts are not yet tax-deductible.</p>
       </div>
@@ -780,9 +780,9 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
    ============================================================ */
 const paymentsConfig = {
   primary: {
-    enabled: false,
+    enabled: true,
     provider: 'zeffy', label: 'Zeffy',
-    formUrl: 'https://www.zeffy.com/embed/donation-form/TODO',
+    formUrl: 'https://www.zeffy.com/en-US/donation-form/ameyali-foundation-support-our-riders-and-kids',
     amountParam: 'amount',
     recurringParam: 'frequency', recurringValue: 'monthly',
     note: { en: '100% of your donation reaches the foundation. Zeffy is free for nonprofits.',
