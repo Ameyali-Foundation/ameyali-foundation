@@ -420,6 +420,42 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 .btn-donate, .btn-primary{background:linear-gradient(180deg, var(--grass) 0%, var(--grass-deep) 100%)}
 .btn-primary:hover{background:linear-gradient(180deg, var(--grass-deep) 0%, #3f5330 100%)}
 
+
+/* Programs accordion — click a row to open, siblings close */
+.programs-accordion{margin-top:56px;display:flex;flex-direction:column;gap:0}
+.program-item{border-top:1.5px solid rgba(245,237,220,.18);padding-top:6px}
+.program-item:first-child{border-top:none}
+.program-toggle{display:flex;align-items:baseline;gap:20px;width:100%;text-align:left;background:none;border:none;color:var(--cream);padding:22px 0 18px;cursor:pointer;transition:color .2s;font:inherit}
+.program-toggle:hover{color:#F5D78A}
+.program-num{font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'SOFT' 100,'wght' 400;font-size:.95rem;letter-spacing:.14em;color:var(--pomegranate);flex-shrink:0;min-width:36px}
+.program-title{font-family:'Fraunces',serif;font-variation-settings:'opsz' 36,'SOFT' 70,'wght' 500;font-size:clamp(1.35rem,1.05rem + 1.2vw,2rem);line-height:1.15;flex:1;letter-spacing:-.01em}
+.program-chevron{font-family:'Fraunces',serif;font-size:1.7rem;color:#F5D78A;transition:transform .3s ease;flex-shrink:0;line-height:1;font-weight:300}
+.program-item.is-open .program-chevron{transform:rotate(45deg)}
+.program-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.program-item.is-open .program-panel{grid-template-rows:1fr}
+.program-panel-inner{overflow:hidden}
+.program-panel p{color:rgba(245,237,220,.82);font-size:1rem;line-height:1.6;max-width:60ch;padding:0 0 26px 56px}
+@media (max-width:640px){.program-panel p{padding-left:0}}
+@media (prefers-reduced-motion: reduce){.program-panel,.program-chevron{transition:none}}
+
+/* Kids we ride for — portrait strip; placeholders use emblem, swap in real photos */
+.kids-strip{padding:72px 0 20px;background:linear-gradient(180deg, var(--sand) 0%, var(--cream-2) 100%);position:relative;overflow:hidden}
+.kids-strip .wrap{position:relative}
+.kids-strip .eyebrow{color:var(--pomegranate);display:block;margin-bottom:10px}
+.kids-strip h2.display{font-size:clamp(1.9rem, 1.4rem + 2.4vw, 3rem);color:var(--ink);max-width:20ch}
+.kids-strip .kids-intro{margin-top:12px;color:var(--saddle);max-width:56ch;font-size:1.05rem;line-height:1.55}
+.kids-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 20px;margin-top:44px}
+@media (min-width:720px){.kids-grid{grid-template-columns:repeat(4,1fr);gap:32px 24px}}
+.kid{text-align:center;position:relative}
+.kid-frame{width:100%;aspect-ratio:1/1;border-radius:50%;background:var(--cream);position:relative;overflow:hidden;box-shadow:0 12px 32px -12px rgba(42,29,18,.28), 0 0 0 3px rgba(194,42,106,.22), 0 0 0 6px var(--cream);transition:transform .3s ease, box-shadow .3s ease}
+.kid:hover .kid-frame{transform:translateY(-4px);box-shadow:0 18px 40px -12px rgba(42,29,18,.36), 0 0 0 3px var(--pomegranate), 0 0 0 6px var(--cream)}
+.kid-frame img,.kid-frame .kid-emblem{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.kid-frame .kid-emblem{background:var(--cream) center/60% no-repeat url('brand/ameyali_emblem.png');opacity:.6;mix-blend-mode:multiply}
+.kid-name{margin-top:16px;font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'SOFT' 70,'wght' 500;font-size:1.15rem;color:var(--ink);letter-spacing:-.01em}
+.kid-caption{margin-top:4px;color:var(--saddle);font-size:.9rem;line-height:1.4;padding:0 4px}
+.kids-note{margin-top:36px;padding:14px 18px;background:rgba(194,42,106,.08);border-left:3px solid var(--pomegranate);color:var(--saddle);font-size:.88rem;line-height:1.5;border-radius:2px;max-width:64ch}
+.kids-note strong{color:var(--pomegranate);letter-spacing:.04em}
+
 </style>
 </head>
 <body>
@@ -457,7 +493,7 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
       <span data-en="Riding for heritage." data-es="Montar por tradición.">Riding for heritage.</span><br>
       <span class="em" data-en="Riding for the children." data-es="Montar por los niños.">Riding for the children.</span>
     </h1>
-    <p class="hero-sub" data-en="Ameyali Foundation is a Gilroy-based nonprofit and escaramuza team, founded to support and uplift children with special needs and disabilities through tradition, performance, and community." data-es="Ameyali Foundation es una organización sin fines de lucro y equipo de escaramuza basado en Gilroy, fundada para apoyar y elevar a niños con necesidades especiales y discapacidades a través de la tradición, la presentación y la comunidad.">Ameyali Foundation is a Gilroy-based nonprofit and escaramuza team, founded to support and uplift children with special needs and disabilities through tradition, performance, and community.</p>
+    <p class="hero-sub" data-en="Ameyali Foundation is a Gilroy-based nonprofit and escaramuza team, founded to support children on the autism spectrum — and every child with special needs — through the power of horses, tradition, and community." data-es="Ameyali Foundation es una organización sin fines de lucro y equipo de escaramuza basado en Gilroy, fundada para apoyar a niños dentro del espectro autista — y a todo niño con necesidades especiales — a través del poder de los caballos, la tradición y la comunidad.">Ameyali Foundation is a Gilroy-based nonprofit and escaramuza team, founded to support children on the autism spectrum — and every child with special needs — through the power of horses, tradition, and community.</p>
     <div class="hero-ctas">
       <a href="#donate" class="btn-primary" data-en="Donate" data-es="Donar">Donate</a>
       <a href="#story" class="btn-ghost" data-en="See our story" data-es="Conoce nuestra historia">See our story</a>
@@ -499,6 +535,50 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
   </div>
 </section>
 
+<!-- KIDS WE RIDE FOR — portrait strip. Placeholders use the Ameyali emblem.
+     To swap in real photos, drop image files into brand/kids/ and change each
+     <div class="kid-emblem"></div> to <img src="brand/kids/<filename>.jpg" alt="<name>"> -->
+<section class="kids-strip" id="kids">
+  <div class="wrap">
+    <p class="eyebrow" data-en="Kids we ride for" data-es="Niños por quienes cabalgamos">Kids we ride for</p>
+    <h2 class="display" data-en="Every ride has a name behind it." data-es="Detrás de cada cabalgata hay un nombre.">Every ride has a name behind it.</h2>
+    <p class="kids-intro" data-en="We&rsquo;re building relationships with families raising children on the autism spectrum in and around Gilroy. These are some of the kids we&rsquo;re showing up for." data-es="Estamos construyendo relaciones con familias que crían niños dentro del espectro autista en Gilroy y alrededores. Estos son algunos de los niños por quienes estamos presentes.">We&rsquo;re building relationships with families raising children on the autism spectrum in and around Gilroy. These are some of the kids we&rsquo;re showing up for.</p>
+
+    <div class="kids-grid">
+      <figure class="kid reveal">
+        <div class="kid-frame"><div class="kid-emblem" role="img" aria-label="Photo coming soon"></div></div>
+        <figcaption>
+          <p class="kid-name">Coming soon</p>
+          <p class="kid-caption" data-en="Photo &amp; name to be added by the family" data-es="Foto y nombre a agregar por la familia">Photo &amp; name to be added by the family</p>
+        </figcaption>
+      </figure>
+      <figure class="kid reveal">
+        <div class="kid-frame"><div class="kid-emblem" role="img" aria-label="Photo coming soon"></div></div>
+        <figcaption>
+          <p class="kid-name">Coming soon</p>
+          <p class="kid-caption" data-en="Photo &amp; name to be added by the family" data-es="Foto y nombre a agregar por la familia">Photo &amp; name to be added by the family</p>
+        </figcaption>
+      </figure>
+      <figure class="kid reveal">
+        <div class="kid-frame"><div class="kid-emblem" role="img" aria-label="Photo coming soon"></div></div>
+        <figcaption>
+          <p class="kid-name">Coming soon</p>
+          <p class="kid-caption" data-en="Photo &amp; name to be added by the family" data-es="Foto y nombre a agregar por la familia">Photo &amp; name to be added by the family</p>
+        </figcaption>
+      </figure>
+      <figure class="kid reveal">
+        <div class="kid-frame"><div class="kid-emblem" role="img" aria-label="Photo coming soon"></div></div>
+        <figcaption>
+          <p class="kid-name">Coming soon</p>
+          <p class="kid-caption" data-en="Photo &amp; name to be added by the family" data-es="Foto y nombre a agregar por la familia">Photo &amp; name to be added by the family</p>
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="kids-note" data-en="&lt;strong&gt;NOTE FOR AMEYALI TEAM:&lt;/strong&gt; Ask each family for a portrait photo (square works best) plus permission to use it publicly. Drop the files into brand/kids/ and edit index.html to swap the placeholders."><strong>NOTE FOR AMEYALI TEAM:</strong> Ask each family for a portrait photo (square works best) plus written permission to use it publicly. Drop the files into <code>brand/kids/</code> and swap the four placeholder blocks in <code>index.html</code>.</p>
+  </div>
+</section>
+
 <!-- METRICS BAND -->
 <section class="metrics">
   <div class="wrap">
@@ -506,7 +586,7 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
     <div class="metrics-grid">
       <div class="metric reveal">
         <span class="metric-num">12<span class="plus">+</span></span>
-        <p class="metric-label" data-en="Young riders and kids we ride for" data-es="Jóvenes jinetes y niños por quienes cabalgamos">Young riders and kids we ride for</p>
+        <p class="metric-label" data-en="Kids on the autism spectrum we ride for" data-es="Niños dentro del espectro autista por quienes cabalgamos">Kids on the autism spectrum we ride for</p>
         <p class="metric-note" data-en="Placeholder — update with real count" data-es="Marcador — actualizar">Placeholder</p>
       </div>
       <div class="metric reveal">
@@ -534,7 +614,7 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
         <h2 class="display" style="margin-top:14px" data-en="From a team to a foundation." data-es="De equipo a fundación.">From a team to a foundation.</h2>
         <p class="pull" data-en="More than a team — a sisterhood built on tradition, respect, and love for our heritage." data-es="Más que un equipo — una hermandad construida sobre la tradición, el respeto y el amor por nuestra herencia.">More than a team — a sisterhood built on tradition, respect, and love for our heritage.</p>
         <p data-en="Escaramuza Ameyali began on March 12, 2019, with a purpose: to teach our daughters the love and passion for Mexican tradition and culture. The sport teaches discipline, strength, respect, responsibility, intense teamwork, and horsemanship — and along the way, it built a family." data-es="Escaramuza Ameyali comenzó el 12 de marzo de 2019, con un propósito: enseñar a nuestras hijas el amor y la pasión por la tradición y la cultura mexicana. Este deporte enseña disciplina, fuerza, respeto, responsabilidad, trabajo en equipo intenso y horsemanship — y en el camino, formó una familia.">Escaramuza Ameyali began on March 12, 2019, with a purpose: to teach our daughters the love and passion for Mexican tradition and culture. The sport teaches discipline, strength, respect, responsibility, intense teamwork, and horsemanship — and along the way, it built a family.</p>
-        <p data-en="In 2026 we took the next step and formally incorporated Ameyali Foundation — a California nonprofit dedicated specifically to supporting children with special needs and disabilities. The team still competes, still rides for nationals, and still supports causes close to us like breast cancer awareness and leukemia. The foundation gives us a structure to do more." data-es="En 2026 dimos el siguiente paso y constituimos formalmente Ameyali Foundation — una organización sin fines de lucro de California dedicada específicamente a apoyar a niños con necesidades especiales y discapacidades. El equipo sigue compitiendo, sigue cabalgando por los nacionales y sigue apoyando causas cercanas a nosotros como la concientización sobre el cáncer de mama y la leucemia. La fundación nos da una estructura para hacer más.">In 2026 we took the next step and formally incorporated Ameyali Foundation — a California nonprofit dedicated specifically to supporting children with special needs and disabilities. The team still competes, still rides for nationals, and still supports causes close to us like breast cancer awareness and leukemia. The foundation gives us a structure to do more.</p>
+        <p data-en="In 2026 we took the next step and formally incorporated Ameyali Foundation — a California nonprofit dedicated to supporting children on the autism spectrum and other kids with special needs. The team still competes, still rides for nationals, and still supports causes close to us like breast cancer awareness and leukemia. The foundation gives us a structure to do more." data-es="En 2026 dimos el siguiente paso y constituimos formalmente Ameyali Foundation — una organización sin fines de lucro de California dedicada a apoyar a niños dentro del espectro autista y a otros niños con necesidades especiales. El equipo sigue compitiendo, sigue cabalgando por los nacionales y sigue apoyando causas cercanas a nosotros como la concientización sobre el cáncer de mama y la leucemia. La fundación nos da una estructura para hacer más.">In 2026 we took the next step and formally incorporated Ameyali Foundation — a California nonprofit dedicated to supporting children on the autism spectrum and other kids with special needs. The team still competes, still rides for nationals, and still supports causes close to us like breast cancer awareness and leukemia. The foundation gives us a structure to do more.</p>
       </div>
     </div>
   </div>
@@ -557,18 +637,42 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
     <h2 class="display reveal" data-en="Three ways we show up." data-es="Tres formas en que estamos presentes.">Three ways we show up.</h2>
     <p class="programs-intro reveal" data-en="Our work is just beginning as a foundation, but the team has shown up for the community since 2019. Here's what that looks like now, and what we're building toward." data-es="Nuestro trabajo como fundación apenas comienza, pero el equipo ha estado presente para la comunidad desde 2019. Así se ve nuestra labor hoy, y hacia dónde vamos.">Our work is just beginning as a foundation, but the team has shown up for the community since 2019. Here's what that looks like now, and what we're building toward.</p>
 
-    <div class="programs-grid">
-      <div class="program reveal">
-        <h4 data-en="Time with the horses" data-es="Tiempo con los caballos">Time with the horses</h4>
-        <p data-en="We open our ranch to children with special needs and disabilities — to spend time with our horses, meet the team, and experience the calm that being around an animal can bring." data-es="Abrimos nuestro rancho a niños con necesidades especiales y discapacidades — para pasar tiempo con nuestros caballos, conocer al equipo y experimentar la calma que da estar junto a un animal.">We open our ranch to children with special needs and disabilities — to spend time with our horses, meet the team, and experience the calm that being around an animal can bring.</p>
+    <div class="programs-accordion">
+      <div class="program-item reveal is-open">
+        <button class="program-toggle" aria-expanded="true" aria-controls="prog-1">
+          <span class="program-num">01</span>
+          <span class="program-title" data-en="Time with the horses" data-es="Tiempo con los caballos">Time with the horses</span>
+          <span class="program-chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="program-panel" id="prog-1" role="region">
+          <div class="program-panel-inner">
+            <p data-en="We open our ranch to children on the autism spectrum and other kids with special needs — to spend time with our horses, meet the team, and experience the calm and focus that being around an animal can bring." data-es="Abrimos nuestro rancho a niños dentro del espectro autista y a otros niños con necesidades especiales — para pasar tiempo con nuestros caballos, conocer al equipo y experimentar la calma y concentración que da estar junto a un animal.">We open our ranch to children on the autism spectrum and other kids with special needs — to spend time with our horses, meet the team, and experience the calm and focus that being around an animal can bring.</p>
+          </div>
+        </div>
       </div>
-      <div class="program reveal">
-        <h4 data-en="Performances for causes" data-es="Presentaciones por causas">Performances for causes</h4>
-        <p data-en="Each performance is a fundraiser. We've ridden for breast cancer awareness, leukemia, and other community causes — bringing the spectacle of escaramuza to crowds while raising real money." data-es="Cada presentación es una recaudación. Hemos cabalgado por la concientización sobre el cáncer de mama, la leucemia y otras causas comunitarias — llevando el espectáculo de la escaramuza al público mientras recaudamos fondos reales.">Each performance is a fundraiser. We've ridden for breast cancer awareness, leukemia, and other community causes — bringing the spectacle of escaramuza to crowds while raising real money.</p>
+      <div class="program-item reveal">
+        <button class="program-toggle" aria-expanded="false" aria-controls="prog-2">
+          <span class="program-num">02</span>
+          <span class="program-title" data-en="Performances for causes" data-es="Presentaciones por causas">Performances for causes</span>
+          <span class="program-chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="program-panel" id="prog-2" role="region">
+          <div class="program-panel-inner">
+            <p data-en="Each performance is a fundraiser. We've ridden for breast cancer awareness, leukemia, and other community causes — bringing the spectacle of escaramuza to crowds while raising real money." data-es="Cada presentación es una recaudación. Hemos cabalgado por la concientización sobre el cáncer de mama, la leucemia y otras causas comunitarias — llevando el espectáculo de la escaramuza al público mientras recaudamos fondos reales.">Each performance is a fundraiser. We've ridden for breast cancer awareness, leukemia, and other community causes — bringing the spectacle of escaramuza to crowds while raising real money.</p>
+          </div>
+        </div>
       </div>
-      <div class="program reveal">
-        <h4 data-en="A structured program (coming)" data-es="Un programa estructurado (próximamente)">A structured program (coming)</h4>
-        <p data-en="With foundation status, we're building a more formal program for children with special needs — structured visits, partnerships with families and schools, and the safety standards that come with serving children well." data-es="Con el estatus de fundación, estamos construyendo un programa más formal para niños con necesidades especiales — visitas estructuradas, alianzas con familias y escuelas, y los estándares de seguridad que vienen con servir bien a los niños.">With foundation status, we're building a more formal program for children with special needs — structured visits, partnerships with families and schools, and the safety standards that come with serving children well.</p>
+      <div class="program-item reveal">
+        <button class="program-toggle" aria-expanded="false" aria-controls="prog-3">
+          <span class="program-num">03</span>
+          <span class="program-title" data-en="A structured program (coming)" data-es="Un programa estructurado (próximamente)">A structured program (coming)</span>
+          <span class="program-chevron" aria-hidden="true">+</span>
+        </button>
+        <div class="program-panel" id="prog-3" role="region">
+          <div class="program-panel-inner">
+            <p data-en="With foundation status, we're building a more formal program for children with special needs — structured visits, partnerships with families and schools, and the safety standards that come with serving children well." data-es="Con el estatus de fundación, estamos construyendo un programa más formal para niños con necesidades especiales — visitas estructuradas, alianzas con familias y escuelas, y los estándares de seguridad que vienen con servir bien a los niños.">With foundation status, we're building a more formal program for children with special needs — structured visits, partnerships with families and schools, and the safety standards that come with serving children well.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1178,5 +1282,22 @@ const io = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script>
+  // Programs accordion
+  document.querySelectorAll('.program-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.program-item');
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.program-item.is-open').forEach(el => {
+        el.classList.remove('is-open');
+        el.querySelector('.program-toggle').setAttribute('aria-expanded','false');
+      });
+      if (!isOpen){
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+</script>
 </body>
 </html>
