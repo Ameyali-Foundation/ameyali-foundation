@@ -19,7 +19,10 @@
   --sand:#E5D5B7;
   --grass:#5C7548;       /* primary accent (per client preference: brown + grass green) */
   --grass-deep:#4A6238;
-  --marigold:#C8902F;
+  --marigold:#D6941E;              /* punched slightly warmer */
+  --pomegranate:#C22A6A;            /* escaramuza pop accent */
+  --pomegranate-deep:#A31E56;
+  --rose-blush:#F1D3D6;             /* tint for warm section band */
   --rule:rgba(42,29,18,.14);
   --shadow: 0 1px 2px rgba(42,29,18,.06), 0 12px 32px -8px rgba(42,29,18,.18);
 }
@@ -377,6 +380,46 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 .info-cta .call{background:var(--grass);color:var(--cream)}
 .info-cta .call:hover{background:var(--grass-deep);transform:translateY(-1px)}
 
+/* ==================================================================
+   Punch-up additions (2026-07-08)
+   Warm heritage base + one vivid escaramuza accent (pomegranate).
+   ================================================================== */
+
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(194,42,106,.10);color:var(--pomegranate);font-family:'Fraunces',serif;font-variation-settings:'opsz' 9,'SOFT' 100,'wght' 500;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase}
+.eyebrow.eyebrow-pom{color:var(--pomegranate)}
+.story-text .pull{border-left-color:var(--pomegranate)}
+
+/* Section rhythm — warm tinted bands break cream-cream-cream monotony */
+.story{background:linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%)}
+.involved{background:linear-gradient(180deg, var(--sand) 0%, var(--cream-2) 100%)}
+
+/* Metrics band — ink field with marigold + pomegranate glow */
+.metrics{padding:72px 0 56px;background:var(--ink);color:var(--cream);position:relative;overflow:hidden}
+.metrics::before{content:'';position:absolute;inset:0;background:radial-gradient(1200px 400px at 15% 25%, rgba(214,148,30,.16), transparent 70%), radial-gradient(900px 300px at 88% 82%, rgba(194,42,106,.22), transparent 70%);pointer-events:none}
+.metrics .wrap{position:relative;z-index:1}
+.metrics-eyebrow{color:#F5D78A;margin-bottom:26px;display:block;font-family:'Fraunces',serif;font-variation-settings:'opsz' 9,'SOFT' 100,'wght' 500;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase}
+.metrics-grid{display:grid;grid-template-columns:1fr;gap:36px}
+@media (min-width:720px){.metrics-grid{grid-template-columns:repeat(3,1fr);gap:56px}}
+.metric{position:relative}
+.metric-num{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144,'SOFT' 40,'wght' 380;font-size:clamp(3.6rem, 3rem + 5vw, 6.4rem);line-height:.95;letter-spacing:-.03em;color:var(--marigold);display:block}
+.metric-num .plus{color:var(--pomegranate);font-style:italic;font-variation-settings:'opsz' 144,'SOFT' 100,'wght' 380}
+.metric-label{margin-top:14px;color:rgba(245,237,220,.82);font-size:1rem;line-height:1.45;max-width:26ch}
+.metric-note{margin-top:6px;color:rgba(245,237,220,.5);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* Full-bleed photo band between story and programs */
+.photo-band{position:relative;min-height:min(64vh, 560px);display:flex;align-items:center;overflow:hidden;background:#1a1108;isolation:isolate}
+.photo-band-img{position:absolute;inset:0;background-image:url('brand/hero-2026-06-29-extended.jpg');background-size:cover;background-position:center 35%;background-repeat:no-repeat;filter:saturate(1.06) contrast(1.02)}
+.photo-band-overlay{position:absolute;inset:0;background:linear-gradient(131deg, rgba(26,17,8,.72) 22%, rgba(26,17,8,0) 65%), linear-gradient(0deg, rgba(26,17,8,.5) 0%, rgba(26,17,8,0) 55%)}
+.photo-band .wrap{position:relative;z-index:2;padding-top:56px;padding-bottom:56px}
+.band-eyebrow{color:#F5D78A;letter-spacing:.22em;text-transform:uppercase;font-family:'Fraunces',serif;font-variation-settings:'opsz' 9,'SOFT' 100,'wght' 500;font-size:.78rem}
+.band-quote{margin-top:18px;font-family:'Fraunces',serif;font-variation-settings:'opsz' 144,'SOFT' 80,'wght' 380;font-style:italic;font-size:clamp(1.5rem, 1.15rem + 2vw, 2.4rem);line-height:1.22;color:var(--cream);max-width:24ch;text-shadow:0 2px 14px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.4)}
+.band-quote .em{color:#F5D78A}
+.band-attrib{margin-top:22px;color:rgba(245,237,220,.78);font-size:.95rem}
+
+/* Punchier gradient fill on primary CTAs */
+.btn-donate, .btn-primary{background:linear-gradient(180deg, var(--grass) 0%, var(--grass-deep) 100%)}
+.btn-primary:hover{background:linear-gradient(180deg, var(--grass-deep) 0%, #3f5330 100%)}
+
 </style>
 </head>
 <body>
@@ -456,6 +499,30 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
   </div>
 </section>
 
+<!-- METRICS BAND -->
+<section class="metrics">
+  <div class="wrap">
+    <span class="metrics-eyebrow" data-en="By the numbers" data-es="En cifras">By the numbers</span>
+    <div class="metrics-grid">
+      <div class="metric reveal">
+        <span class="metric-num">12<span class="plus">+</span></span>
+        <p class="metric-label" data-en="Young riders and kids we ride for" data-es="Jóvenes jinetes y niños por quienes cabalgamos">Young riders and kids we ride for</p>
+        <p class="metric-note" data-en="Placeholder — update with real count" data-es="Marcador — actualizar">Placeholder</p>
+      </div>
+      <div class="metric reveal">
+        <span class="metric-num">4</span>
+        <p class="metric-label" data-en="Public performances a year across California" data-es="Actuaciones públicas al año en California">Public performances a year across California</p>
+        <p class="metric-note" data-en="Placeholder — update with real count" data-es="Marcador — actualizar">Placeholder</p>
+      </div>
+      <div class="metric reveal">
+        <span class="metric-num">1</span>
+        <p class="metric-label" data-en="Arena, one familia charra, one shared heritage" data-es="Una arena, una familia charra, una herencia compartida">Arena, one familia charra, one shared heritage</p>
+        <p class="metric-note" data-en="Since 2020" data-es="Desde 2020">Since 2020</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="story" id="story">
   <div class="wrap">
     <div class="story-grid">
@@ -470,6 +537,17 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
         <p data-en="In 2026 we took the next step and formally incorporated Ameyali Foundation — a California nonprofit dedicated specifically to supporting children with special needs and disabilities. The team still competes, still rides for nationals, and still supports causes close to us like breast cancer awareness and leukemia. The foundation gives us a structure to do more." data-es="En 2026 dimos el siguiente paso y constituimos formalmente Ameyali Foundation — una organización sin fines de lucro de California dedicada específicamente a apoyar a niños con necesidades especiales y discapacidades. El equipo sigue compitiendo, sigue cabalgando por los nacionales y sigue apoyando causas cercanas a nosotros como la concientización sobre el cáncer de mama y la leucemia. La fundación nos da una estructura para hacer más.">In 2026 we took the next step and formally incorporated Ameyali Foundation — a California nonprofit dedicated specifically to supporting children with special needs and disabilities. The team still competes, still rides for nationals, and still supports causes close to us like breast cancer awareness and leukemia. The foundation gives us a structure to do more.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PHOTO BAND -->
+<section class="photo-band" role="img" aria-label="Escaramuza rider at golden hour">
+  <div class="photo-band-img"></div>
+  <div class="photo-band-overlay"></div>
+  <div class="wrap">
+    <span class="band-eyebrow" data-en="En la arena" data-es="En la arena">En la arena</span>
+    <p class="band-quote" data-en="Every ride is a promise — to the tradition, and to the <span class=&quot;em&quot;>next generation</span>." data-es="Cada cabalgata es una promesa — a la tradición y a la <span class=&quot;em&quot;>próxima generación</span>."><em>Every ride is a promise</em> — to the tradition, and to the <span class="em">next generation</span>.</p>
+    <p class="band-attrib" data-en="— Escaramuza Ameyali" data-es="— Escaramuza Ameyali">— Escaramuza Ameyali</p>
   </div>
 </section>
 
