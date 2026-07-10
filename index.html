@@ -456,6 +456,34 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 .kids-note{margin-top:36px;padding:14px 18px;background:rgba(194,42,106,.08);border-left:3px solid var(--pomegranate);color:var(--saddle);font-size:.88rem;line-height:1.5;border-radius:2px;max-width:64ch}
 .kids-note strong{color:var(--pomegranate);letter-spacing:.04em}
 
+/* ---- Upcoming events / where to see us ride (2026-07-10) ---- */
+.events{padding:96px 0;background:linear-gradient(180deg,var(--cream-2) 0%,var(--cream) 100%);position:relative}
+.events .eyebrow{color:var(--pomegranate);display:block}
+.events-head{max-width:62ch}
+.events-head h2.display{margin-top:14px}
+.events-head .lede{margin-top:18px;max-width:56ch}
+.events-grid{display:grid;gap:28px;grid-template-columns:1fr;margin-top:52px}
+@media(min-width:640px){.events-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.events-grid{grid-template-columns:repeat(3,1fr);gap:32px}}
+.event-card{display:flex;flex-direction:column;background:var(--cream);border:1px solid var(--rule);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease}
+.event-card:hover{transform:translateY(-4px);box-shadow:0 26px 52px -22px rgba(42,29,18,.42)}
+.event-flyer{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--sand)}
+.event-flyer img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.event-card:hover .event-flyer img{transform:scale(1.05)}
+.event-status{position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;font-family:'Fraunces',serif;font-variation-settings:'opsz' 9,'SOFT' 100,'wght' 500;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);background:linear-gradient(180deg,var(--grass),var(--grass-deep));box-shadow:0 6px 16px -6px rgba(0,0,0,.5)}
+.event-status.past{background:linear-gradient(180deg,var(--bark),var(--saddle))}
+.event-ribbon{position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.03em;color:var(--cream);background:linear-gradient(180deg,var(--pomegranate),var(--pomegranate-deep));box-shadow:0 6px 16px -6px rgba(0,0,0,.5)}
+.event-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex-grow:1}
+.event-date{font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'SOFT' 70,'wght' 500;font-size:1.02rem;color:var(--pomegranate);letter-spacing:-.01em}
+.event-title{font-family:'Fraunces',serif;font-variation-settings:'opsz' 36,'SOFT' 70,'wght' 500;font-size:1.32rem;line-height:1.16;margin:6px 0 12px;color:var(--ink)}
+.event-meta{display:flex;align-items:flex-start;gap:8px;color:var(--saddle);font-size:.9rem;line-height:1.4}
+.event-meta svg{flex-shrink:0;margin-top:1px;color:var(--grass)}
+.event-desc{color:var(--saddle);font-size:.93rem;line-height:1.55;margin-top:14px;flex-grow:1}
+.event-link{display:inline-flex;align-items:center;gap:7px;margin-top:20px;font-weight:600;font-size:.92rem;color:var(--grass-deep);align-self:flex-start}
+.event-link::after{content:'→';transition:transform .2s ease}
+.event-link:hover::after{transform:translateX(4px)}
+.events-note{margin-top:40px;text-align:center;color:var(--saddle);font-size:.92rem;line-height:1.5;max-width:60ch;margin-left:auto;margin-right:auto}
+
 /* ==================================================================
    Motion layer (2026-07-10) — standout entrance + scroll animation.
    Inspired by award-winning editorial sites; everything degrades
@@ -529,6 +557,7 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
       <a href="#story" data-en="Story" data-es="Historia">Story</a>
       <a href="#programs" data-en="What we do" data-es="Qué hacemos">What we do</a>
       <a href="#performances" data-en="Performances" data-es="Presentaciones">Performances</a>
+      <a href="#events" data-en="Events" data-es="Eventos">Events</a>
       <a href="#gallery" data-en="Gallery" data-es="Galería">Gallery</a>
       <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
     </div>
@@ -757,6 +786,68 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
         </video>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS -->
+<section class="events" id="events">
+  <div class="wrap">
+    <div class="events-head">
+      <span class="eyebrow reveal" data-en="Where to see us" data-es="Dónde vernos">Where to see us</span>
+      <h2 class="display reveal" data-en="On the arena this season." data-es="En la arena esta temporada.">On the arena this season.</h2>
+      <p class="lede reveal" data-en="Catch the team at charrería events across California — many of them benefits for the very causes we ride for." data-es="Encuentra al equipo en eventos de charrería por toda California — muchos de ellos a beneficio de las mismas causas por las que cabalgamos.">Catch the team at charrería events across California — many of them benefits for the very causes we ride for.</p>
+    </div>
+
+    <div class="events-grid">
+
+      <!-- Copa Oro 2 -->
+      <article class="event-card reveal">
+        <div class="event-flyer">
+          <span class="event-status" data-en="Upcoming" data-es="Próximo">Upcoming</span>
+          <img src="brand/events/copa-oro-2-2026.jpeg" alt="Copa Oro 2 — Charrería vs Cáncer, September 4 and 5, 2026, at Orgullo Zacatecano Sports Arena" loading="lazy">
+        </div>
+        <div class="event-body">
+          <p class="event-date" data-en="September 4–5, 2026" data-es="4–5 de septiembre, 2026">September 4–5, 2026</p>
+          <h3 class="event-title" data-en="Copa Oro 2 — Charrería vs Cáncer" data-es="Copa Oro 2 — Charrería vs Cáncer">Copa Oro 2 — Charrería vs Cáncer</h3>
+          <p class="event-meta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-en="Orgullo Zacatecano Sports Arena" data-es="Orgullo Zacatecano Sports Arena">Orgullo Zacatecano Sports Arena</span></p>
+          <p class="event-desc" data-en="A charrería tournament held during Leukemia Awareness Month — a cause close to our familia." data-es="Un torneo de charrería durante el Mes de Concientización sobre la Leucemia — una causa cercana a nuestra familia.">A charrería tournament held during Leukemia Awareness Month — a cause close to our familia.</p>
+        </div>
+      </article>
+
+      <!-- Clásico de las Américas -->
+      <article class="event-card reveal">
+        <div class="event-flyer">
+          <span class="event-status" data-en="Upcoming" data-es="Próximo">Upcoming</span>
+          <img src="brand/events/clasico-de-las-americas-2026.jpeg" alt="Clásico de las Américas — Charrería against Cancer, September 25–27 and October 1–4, 2026, at Pico Rivera Sports Arena" loading="lazy">
+        </div>
+        <div class="event-body">
+          <p class="event-date" data-en="Sep 25–27 &amp; Oct 1–4, 2026" data-es="25–27 sep &amp; 1–4 oct, 2026">Sep 25–27 &amp; Oct 1–4, 2026</p>
+          <h3 class="event-title" data-en="Clásico de las Américas" data-es="Clásico de las Américas">Clásico de las Américas</h3>
+          <p class="event-meta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-en="Pico Rivera Sports Arena, CA" data-es="Pico Rivera Sports Arena, CA">Pico Rivera Sports Arena, CA</span></p>
+          <p class="event-desc" data-en="A multi-day charrería classic — “Charrería against Cancer” — supporting breast cancer awareness." data-es="Un clásico de charrería de varios días — “Charrería contra el Cáncer” — en apoyo a la concientización sobre el cáncer de mama.">A multi-day charrería classic — “Charrería against Cancer” — supporting breast cancer awareness.</p>
+          <a class="event-link" href="https://www.clasicodelasamericas.com" target="_blank" rel="noopener" data-en="Event details" data-es="Detalles del evento">Event details</a>
+        </div>
+      </article>
+
+      <!-- 13° Torneo Charro de Aniversario -->
+      <article class="event-card reveal">
+        <div class="event-flyer">
+          <span class="event-status past" data-en="Recent" data-es="Reciente">Recent</span>
+          <span class="event-ribbon" data-en="★ Ameyali rode" data-es="★ Ameyali cabalgó">★ Ameyali rode</span>
+          <img src="brand/events/torneo-charro-aniversario-2026.jpeg" alt="13th Anniversary Charro Tournament at Rancho Hennessy, April 18, 2026, with Escaramuza Ameyali in the lineup" loading="lazy">
+        </div>
+        <div class="event-body">
+          <p class="event-date" data-en="April 18, 2026" data-es="18 de abril, 2026">April 18, 2026</p>
+          <h3 class="event-title" data-en="13° Torneo Charro de Aniversario" data-es="13° Torneo Charro de Aniversario">13° Torneo Charro de Aniversario</h3>
+          <p class="event-meta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-en="Pico Rivera Sports Arena, CA" data-es="Pico Rivera Sports Arena, CA">Pico Rivera Sports Arena, CA</span></p>
+          <p class="event-desc" data-en="Escaramuza Ameyali joined the Rancho Hennessy anniversary tournament, riding in the 6:30 pm escaramuza showcase." data-es="Escaramuza Ameyali participó en el torneo de aniversario de Rancho Hennessy, cabalgando en la presentación de escaramuzas de las 6:30 pm.">Escaramuza Ameyali joined the Rancho Hennessy anniversary tournament, riding in the 6:30 pm escaramuza showcase.</p>
+          <a class="event-link" href="tel:+19094891470" data-en="Info: (909) 489-1470" data-es="Informes: (909) 489-1470">Info: (909) 489-1470</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="events-note reveal" data-en="Dates and details come straight from each event’s organizers and can change — confirm with the host before you head out." data-es="Las fechas y los detalles provienen directamente de los organizadores de cada evento y pueden cambiar — confirma con el anfitrión antes de asistir.">Dates and details come straight from each event’s organizers and can change — confirm with the host before you head out.</p>
   </div>
 </section>
 
@@ -1331,7 +1422,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 /* ---------- STAGGERED REVEAL ---------- */
 // Give grouped reveals an incremental delay so children read in sequence.
-['.pillars-grid','.kids-grid','.metrics-grid','.involved-grid','.programs-accordion','.footer-grid']
+['.pillars-grid','.kids-grid','.metrics-grid','.events-grid','.involved-grid','.programs-accordion','.footer-grid']
   .forEach(sel => {
     document.querySelectorAll(sel).forEach(group => {
       group.querySelectorAll(':scope > .reveal').forEach((el, i) => {
