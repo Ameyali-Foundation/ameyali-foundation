@@ -521,6 +521,51 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
   }
 }
 
+
+/* ==================================================================
+   VIDEO BAND — "See us ride" (between kids-strip and metrics)
+   ================================================================== */
+.video-band{position:relative;background:#1a1108;overflow:hidden;isolation:isolate}
+.video-band-inner{position:relative;width:100%;aspect-ratio:16/9;min-height:320px;max-height:78vh}
+.video-band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video-band .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,17,8,.25) 0%,rgba(26,17,8,0) 30%,rgba(26,17,8,0) 62%,rgba(26,17,8,.78) 100%),linear-gradient(90deg,rgba(26,17,8,.55) 0%,rgba(26,17,8,.05) 45%,rgba(26,17,8,0) 65%);pointer-events:none;z-index:1}
+.video-band .cap{position:absolute;left:0;right:0;bottom:32px;padding:0 24px;color:var(--cream);z-index:2;max-width:1200px;margin:0 auto}
+@media(min-width:900px){.video-band .cap{bottom:56px;padding:0 48px}}
+.video-band .cap .eyebrow{color:var(--gold);opacity:.95}
+.video-band .cap h2{font-size:clamp(1.9rem,1.4rem + 2.4vw,3.2rem);color:var(--cream);margin-top:10px;max-width:16ch;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.video-band .cap p{color:rgba(245,237,220,.9);margin-top:12px;max-width:44ch;font-size:1.02rem;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+
+/* ==================================================================
+   EVENTS — "Upcoming rides" (between programs and explore)
+   ================================================================== */
+.events{padding:88px 0 96px;background:linear-gradient(180deg,var(--cream) 0%,var(--sand) 60%,rgba(224,27,110,.10) 100%);position:relative;overflow:hidden}
+.events::before{content:'';position:absolute;left:50%;top:0;transform:translate(-50%,-50%);width:64px;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--teal),var(--pomegranate))}
+.events-head{max-width:60ch;margin-bottom:44px}
+.events-head .eyebrow{color:var(--pomegranate)}
+.events-head h2.display{font-size:clamp(1.9rem,1.4rem + 2.4vw,3rem);color:var(--ink);margin-top:8px}
+.events-head p.lede{margin-top:14px;color:var(--saddle);max-width:52ch}
+.events-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:720px){.events-grid{grid-template-columns:repeat(3,1fr);gap:22px}}
+.event{position:relative;display:flex;flex-direction:column;background:var(--cream);border:1.5px solid var(--rule);border-radius:16px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.event:hover{transform:translateY(-4px);box-shadow:0 22px 44px -20px rgba(42,29,18,.35);border-color:var(--pomegranate)}
+.event-top{position:relative;padding:24px 22px 20px;border-bottom:1px solid var(--rule)}
+.event-date{display:flex;align-items:baseline;gap:10px;color:var(--pomegranate);font-family:'Fraunces',serif;font-variation-settings:'opsz' 36,'SOFT' 60,'wght' 500;font-size:2.6rem;line-height:.95;letter-spacing:-.02em}
+.event-date .month{font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:var(--saddle);font-variation-settings:'opsz' 9,'SOFT' 100,'wght' 500;line-height:1.15;transform:translateY(-6px);text-align:left}
+.event-cause{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:5px 12px;border-radius:999px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.event-cause::before{content:'';width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.85}
+.event-cause.leuk{background:rgba(240,162,13,.16);color:#8A5D0F}
+.event-cause.charro{background:rgba(21,154,184,.14);color:var(--teal-deep)}
+.event-cause.breast{background:rgba(224,27,110,.14);color:var(--pomegranate-deep)}
+.event-body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
+.event-body h3{font-family:'Fraunces',serif;font-variation-settings:'opsz' 36,'SOFT' 70,'wght' 500;font-size:1.32rem;line-height:1.18;color:var(--ink);letter-spacing:-.01em}
+.event-venue{margin-top:8px;color:var(--saddle);font-size:.92rem;line-height:1.4}
+.event-note{margin-top:14px;color:var(--bark);font-size:.9rem;line-height:1.5}
+.event-ameyali{margin-top:14px;padding:10px 12px;background:rgba(224,27,110,.08);border-left:3px solid var(--pomegranate);color:var(--saddle);font-size:.86rem;line-height:1.45;border-radius:2px}
+.event-ameyali b{color:var(--pomegranate)}
+.event-cta{margin-top:auto;padding-top:18px;display:inline-flex;align-items:center;gap:6px;color:var(--pomegranate);font-weight:600;font-size:.94rem;text-decoration:none;transition:transform .2s ease}
+.event-cta::after{content:'→';transition:transform .2s ease}
+.event:hover .event-cta::after{transform:translateX(3px)}
+
 </style>
 </head>
 <body>
@@ -534,7 +579,7 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
     <div class="nav-links">
       <a href="#kids" data-en="Our kids" data-es="Nuestros niños">Our kids</a>
       <a href="#programs" data-en="What we do" data-es="Qué hacemos">What we do</a>
-      <a href="#explore" data-en="More" data-es="Más">More</a>
+      <a href="#events" data-en="Events" data-es="Eventos">Events</a>
       <a href="/gallery.html" data-en="Gallery" data-es="Galería">Gallery</a>
       <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
     </div>
@@ -621,6 +666,19 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
   </div>
 </section>
 
+<!-- VIDEO BAND — Escaramuza in motion. Autoplay muted loop; falls back to hero poster if the file is missing. -->
+<section class="video-band" id="video">
+  <div class="video-band-inner">
+    <video src="media/IMG_4914.MOV" autoplay muted loop playsinline preload="metadata" poster="brand/hero-2026-06-29-extended.jpg" aria-label="Escaramuza Ameyali performing at speed"></video>
+    <div class="veil" aria-hidden="true"></div>
+    <div class="cap">
+      <span class="eyebrow" data-en="See us ride" data-es="Míranos cabalgar">See us ride</span>
+      <h2 class="display" data-en="Escaramuza in motion." data-es="Escaramuza en movimiento.">Escaramuza in motion.</h2>
+      <p data-en="Eight riders in full traje charro, choreographed at speed. Every performance funds the foundation&rsquo;s work with kids on the autism spectrum." data-es="Ocho jinetes en traje charro completo, coreografiadas a velocidad. Cada presentación financia el trabajo de la fundación con niños dentro del espectro autista.">Eight riders in full traje charro, choreographed at speed. Every performance funds the foundation&rsquo;s work with kids on the autism spectrum.</p>
+    </div>
+  </div>
+</section>
+
 <!-- METRICS BAND -->
 <section class="metrics">
   <div class="wrap">
@@ -689,6 +747,56 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING RIDES — event cards (Ameyali's scheduled tournaments + benefit events) -->
+<section class="events" id="events">
+  <div class="wrap">
+    <div class="events-head">
+      <p class="eyebrow" data-en="Upcoming rides" data-es="Próximas cabalgatas">Upcoming rides</p>
+      <h2 class="display" data-en="Where you&rsquo;ll see us next." data-es="Donde nos verás próximamente.">Where you&rsquo;ll see us next.</h2>
+      <p class="lede" data-en="Escaramuza Ameyali competes and performs across California — often alongside causes we support with the foundation." data-es="Escaramuza Ameyali compite y se presenta por toda California — a menudo junto a causas que apoyamos con la fundación.">Escaramuza Ameyali competes and performs across California &mdash; often alongside causes we support with the foundation.</p>
+    </div>
+    <div class="events-grid">
+      <article class="event">
+        <div class="event-top">
+          <div class="event-date">18<span class="month">Apr<br>2026</span></div>
+          <span class="event-cause charro" data-en="Charrería" data-es="Charrería">Charrería</span>
+        </div>
+        <div class="event-body">
+          <h3 data-en="13° Torneo Charro de Aniversario — Rancho Hennessy" data-es="13° Torneo Charro de Aniversario — Rancho Hennessy">13° Torneo Charro de Aniversario &mdash; Rancho Hennessy</h3>
+          <p class="event-venue">Pico Rivera Sports Arena<br>11003 Sports Arena Dr, Pico Rivera CA</p>
+          <div class="event-ameyali"><b>Esc. Ameyali</b> rides at 6:30 PM in the escaramuza block, alongside 5 other teams.</div>
+          <p class="event-note">Info: Pepe Covarrubias &middot; (909) 489-1470</p>
+          <a href="tel:+19094891470" class="event-cta" data-en="Call for info" data-es="Llamar para informes">Call for info</a>
+        </div>
+      </article>
+      <article class="event">
+        <div class="event-top">
+          <div class="event-date">4&ndash;5<span class="month">Sep<br>2026</span></div>
+          <span class="event-cause leuk" data-en="Leukemia awareness" data-es="Concientización — leucemia">Leukemia awareness</span>
+        </div>
+        <div class="event-body">
+          <h3 data-en="Copa Oro — Charrería vs Cáncer" data-es="Copa Oro — Charrería vs Cáncer">Copa Oro &mdash; Charrería vs Cáncer</h3>
+          <p class="event-venue">JC Sports Arena<br>Orgullo Zacatecano</p>
+          <p class="event-note" data-en="A charrería tournament raising awareness for pediatric leukemia. Proceeds directly support young patients." data-es="Un torneo de charrería que crea conciencia sobre la leucemia pediátrica. Los ingresos apoyan a jóvenes pacientes.">A charrería tournament raising awareness for pediatric leukemia. Proceeds directly support young patients.</p>
+          <a href="https://orgullozacatecano.com" target="_blank" rel="noopener" class="event-cta" data-en="More info" data-es="Más información">More info</a>
+        </div>
+      </article>
+      <article class="event">
+        <div class="event-top">
+          <div class="event-date">25<span class="month">Sep – Oct 4<br>2026</span></div>
+          <span class="event-cause breast" data-en="Breast cancer" data-es="Cáncer de mama">Breast cancer</span>
+        </div>
+        <div class="event-body">
+          <h3 data-en="Clásico de las Americas — Charrería against Cancer" data-es="Clásico de las Americas — Charrería contra el cáncer">Clásico de las Americas &mdash; Charrería against Cancer</h3>
+          <p class="event-venue">Pico Rivera Sports Arena<br>Sept 25&ndash;27 &amp; Oct 1&ndash;4, 2026</p>
+          <p class="event-note" data-en="Multi-weekend international tournament raising funds and awareness for breast cancer." data-es="Torneo internacional de varios fines de semana que recauda fondos y concientiza sobre el cáncer de mama.">Multi-weekend international tournament raising funds and awareness for breast cancer.</p>
+          <a href="https://www.clasicodelasamericas.com" target="_blank" rel="noopener" class="event-cta" data-en="Save the date" data-es="Reserva la fecha">Save the date</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
