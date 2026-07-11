@@ -19,12 +19,12 @@
   --sand:#E5D5B7;
   --grass:#5C7548;       /* primary accent (per client preference: brown + grass green) */
   --grass-deep:#4A6238;
-  --marigold:#E39A0F;               /* brighter marigold */
-  --gold:#F5C24B;                   /* buttery highlight — used on hero em + nav underlines */
-  --pomegranate:#D42264;            /* deeper, more vivid escaramuza pop */
-  --pomegranate-deep:#B01852;
-  --teal:#2E8FA6;                   /* escaramuza dress teal — counter accent */
-  --teal-deep:#1F6D80;
+  --marigold:#F0A20D;               /* punchy marigold */
+  --gold:#FBC647;                   /* buttery highlight — hero em, nav underlines */
+  --pomegranate:#E01B6E;            /* vivid escaramuza pop */
+  --pomegranate-deep:#B31054;
+  --teal:#159AB8;                   /* escaramuza dress teal — counter accent */
+  --teal-deep:#0A7A94;
   --rose-blush:#F1D3D6;             /* tint for warm section band */
   --rule:rgba(42,29,18,.14);
   --shadow: 0 1px 2px rgba(42,29,18,.06), 0 12px 32px -8px rgba(42,29,18,.18);
@@ -278,7 +278,7 @@ h3.display{font-size:clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem)}
 }
 
 /* ---- Get Involved ---- */
-.involved{padding:96px 0}
+.involved{padding:96px 0;background:linear-gradient(180deg, var(--cream) 0%, rgba(224,27,110,.06) 50%, var(--sand) 100%)}
 .involved-grid{display:grid;gap:24px;grid-template-columns:1fr;margin-top:48px}
 @media (min-width:760px){.involved-grid{grid-template-columns:repeat(3,1fr)}}
 .card{background:var(--cream-2);border:1px solid var(--rule);border-radius:6px;padding:32px 28px;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease}
@@ -396,7 +396,7 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 .metrics-grid{display:grid;grid-template-columns:1fr;gap:36px}
 @media (min-width:720px){.metrics-grid{grid-template-columns:repeat(3,1fr);gap:56px}}
 .metric{position:relative}
-.metric-num{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144,'SOFT' 40,'wght' 380;font-size:clamp(3.6rem, 3rem + 5vw, 6.4rem);line-height:.95;letter-spacing:-.03em;color:var(--marigold);display:block}
+.metric-num{font-family:'Fraunces',serif;font-variation-settings:'opsz' 144,'SOFT' 40,'wght' 380;font-size:clamp(3.8rem, 3.1rem + 5.4vw, 7rem);line-height:.95;letter-spacing:-.03em;display:block;background:linear-gradient(180deg, var(--gold) 0%, var(--marigold) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 24px rgba(240,162,13,.28))}
 .metric-num .plus{color:var(--pomegranate);font-style:italic;font-variation-settings:'opsz' 144,'SOFT' 100,'wght' 380}
 .metric-label{margin-top:14px;color:rgba(245,237,220,.82);font-size:1rem;line-height:1.45;max-width:26ch}
 .metric-note{margin-top:6px;color:rgba(245,237,220,.5);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
@@ -434,7 +434,8 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 @media (prefers-reduced-motion: reduce){.program-panel,.program-chevron{transition:none}}
 
 /* Kids we ride for — portrait strip; placeholders use emblem, swap in real photos */
-.kids-strip{padding:72px 0 20px;background:linear-gradient(180deg, var(--sand) 0%, var(--cream-2) 100%);position:relative;overflow:hidden}
+.kids-strip{padding:72px 0 40px;background:linear-gradient(180deg, var(--cream) 0%, var(--sand) 55%, rgba(224,27,110,.12) 100%);position:relative;overflow:hidden}
+.kids-strip::after{content:'';position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg, var(--pomegranate) 0%, var(--marigold) 50%, var(--teal) 100%);opacity:.85}
 .kids-strip .wrap{position:relative}
 .kids-strip .eyebrow{color:var(--pomegranate);display:block;margin-bottom:10px}
 .kids-strip h2.display{font-size:clamp(1.9rem, 1.4rem + 2.4vw, 3rem);color:var(--ink);max-width:20ch}
@@ -454,13 +455,17 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 
 
 /* ---- Explore link tiles (short-linkouts pattern from hellmanfoundation.org) ---- */
-.explore{padding:80px 0 88px;background:linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%)}
+.explore{padding:80px 0 88px;background:linear-gradient(180deg, var(--cream) 0%, rgba(224,27,110,.08) 45%, var(--sand) 100%);position:relative}
+.explore::before{content:'';position:absolute;left:50%;top:0;transform:translate(-50%,-50%);width:64px;height:6px;border-radius:6px;background:linear-gradient(90deg, var(--marigold), var(--pomegranate))}
 .explore-head{display:flex;flex-direction:column;gap:8px;margin-bottom:36px;max-width:60ch}
 .explore-head .eyebrow{color:var(--pomegranate)}
 .explore-head h2.display{font-size:clamp(1.9rem, 1.4rem + 2.4vw, 3rem);color:var(--ink)}
 .explore-grid{display:grid;grid-template-columns:1fr;gap:16px}
-@media (min-width:640px){.explore-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
-@media (min-width:1000px){.explore-grid{grid-template-columns:repeat(4,1fr);gap:22px}}
+@media (min-width:640px){.explore-grid{grid-template-columns:repeat(2,1fr);gap:24px}}
+.explore-tile{min-height:260px}
+.explore-tail{margin-top:36px;text-align:center}
+.explore-tail a{color:var(--pomegranate);font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'SOFT' 100,'wght' 500;font-size:1.05rem;border-bottom:1.5px solid rgba(224,27,110,.35);padding-bottom:2px;transition:border-color .2s ease, color .2s ease}
+.explore-tail a:hover{color:var(--pomegranate-deep);border-bottom-color:var(--pomegranate)}
 .explore-tile{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;padding:22px 22px 20px;text-align:left;font:inherit;background:var(--cream);border:1.5px solid var(--rule);border-radius:14px;color:var(--ink);transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;overflow:hidden;isolation:isolate}
 .explore-tile:hover{transform:translateY(-3px);box-shadow:0 18px 40px -18px rgba(42,29,18,.35);border-color:var(--pomegranate)}
 .explore-tile::before{content:'';position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg, var(--pomegranate), var(--marigold));opacity:0;transition:opacity .25s ease}
@@ -656,39 +661,26 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
       <h2 class="display" data-en="More of the story." data-es="Más de la historia.">More of the story.</h2>
     </div>
     <div class="explore-grid">
-      <a class="explore-tile tile-pom" href="/gallery.html">
+      <button type="button" class="explore-tile tile-teal" data-open-info="about">
         <div>
-          <span class="tile-eyebrow" data-en="Gallery" data-es="Galería">Gallery</span>
-          <h3 data-en="The team, in their element" data-es="El equipo, en su elemento">The team, in their element</h3>
-          <p data-en="Photographs from competition, presentations, and quiet moments at the ranch." data-es="Fotografías de competencia, presentaciones y momentos tranquilos en el rancho.">Photographs from competition, presentations, and quiet moments at the ranch.</p>
+          <span class="tile-eyebrow" data-en="About us" data-es="Sobre nosotras">About us</span>
+          <h3 data-en="Our story &amp; our team." data-es="Nuestra historia y equipo.">Our story &amp; our team.</h3>
+          <p data-en="How Escaramuza Ameyali became a California nonprofit for autism support — and the eight riders who make it happen." data-es="Cómo Escaramuza Ameyali se convirtió en una fundación de California por el apoyo al autismo — y las ocho jinetes que lo hacen posible.">How Escaramuza Ameyali became a California nonprofit for autism support — and the eight riders who make it happen.</p>
         </div>
-        <span class="tile-cta" data-en="Open gallery →" data-es="Abrir galería →">Open gallery →</span>
-      </a>
-      <button type="button" class="explore-tile tile-teal" data-open-info="story">
-        <div>
-          <span class="tile-eyebrow" data-en="Our story" data-es="Nuestra historia">Our story</span>
-          <h3 data-en="From a team to a foundation" data-es="De equipo a fundación">From a team to a foundation</h3>
-          <p data-en="How Escaramuza Ameyali became a California nonprofit for autism support." data-es="Cómo Escaramuza Ameyali se convirtió en fundación por el apoyo al autismo.">How Escaramuza Ameyali became a California nonprofit for autism support.</p>
-        </div>
-        <span class="tile-cta" data-en="Read our story →" data-es="Leer historia →">Read our story →</span>
+        <span class="tile-cta" data-en="Read our story →" data-es="Leer más →">Read our story →</span>
       </button>
-      <button type="button" class="explore-tile tile-marigold" data-open-info="team">
-        <div>
-          <span class="tile-eyebrow" data-en="The team" data-es="El equipo">The team</span>
-          <h3 data-en="Eight riders. One family." data-es="Ocho jinetes. Una familia.">Eight riders. One family.</h3>
-          <p data-en="Daughters, sisters, and friends from the South Bay — meet the riders and board." data-es="Hijas, hermanas y amigas del South Bay — conoce a las jinetes y a la mesa directiva.">Daughters, sisters, and friends from the South Bay — meet the riders and board.</p>
-        </div>
-        <span class="tile-cta" data-en="Meet the team →" data-es="Conocer al equipo →">Meet the team →</span>
-      </button>
-      <button type="button" class="explore-tile tile-grass" data-open-info="book">
+      <button type="button" class="explore-tile tile-marigold" data-open-info="book">
         <div>
           <span class="tile-eyebrow" data-en="Book the team" data-es="Reserva al equipo">Book the team</span>
-          <h3 data-en="A performance for your event" data-es="Una presentación para tu evento">A performance for your event</h3>
-          <p data-en="Eight riders in full traje charro, choreographed at speed. Every booking funds the foundation." data-es="Ocho jinetes en traje charro completo, coreografiado a velocidad. Cada reserva apoya la fundación.">Eight riders in full traje charro, choreographed at speed. Every booking funds the foundation.</p>
+          <h3 data-en="A performance for your event." data-es="Una presentación para tu evento.">A performance for your event.</h3>
+          <p data-en="Eight riders in full traje charro, choreographed at speed. Every booking directly funds the foundation." data-es="Ocho jinetes en traje charro completo, coreografiadas a velocidad. Cada reservación financia la fundación.">Eight riders in full traje charro, choreographed at speed. Every booking directly funds the foundation.</p>
         </div>
         <span class="tile-cta" data-en="Inquire →" data-es="Consultar →">Inquire →</span>
       </button>
     </div>
+    <p class="explore-tail">
+      <a href="/gallery.html" data-en="Or browse the full gallery →" data-es="O explora la galería completa →">Or browse the full gallery →</a>
+    </p>
   </div>
 </section>
 
@@ -1059,20 +1051,12 @@ const infoContent = {
       es:['Días de evento — montaje, apoyo al público y logística en presentaciones','Recaudación — ayuda a organizar y operar eventos de recaudación','Ayudantes del programa — conforme construimos nuestro programa para niños']
     }
   },
-  story: {
-    title: {en:'From a team to a foundation', es:'De equipo a fundación'},
-    sub: {en:'A sisterhood built on tradition, respect, and love for our heritage.', es:'Una hermandad construida sobre tradición, respeto y amor por nuestra herencia.'},
+  about: {
+    title: {en:'Our story & our team', es:'Nuestra historia y equipo'},
+    sub: {en:'From a South Bay escaramuza team to a California nonprofit for autism support.', es:'De un equipo de escaramuza del South Bay a una fundación de California por el apoyo al autismo.'},
     items: {
-      en:['Founded March 12, 2019, when a small group of South Bay families came together to teach our daughters the love and passion of Mexican escaramuza.','Grew from a competing team into a sisterhood — competing at nationals while performing for community causes like breast-cancer awareness and leukemia.','In 2026 we formally incorporated Ameyali Foundation, a California nonprofit dedicated to supporting children on the autism spectrum and other kids with special needs — through the power of horses and heritage.'],
-      es:['Fundada el 12 de marzo de 2019, cuando un pequeño grupo de familias del South Bay se unió para enseñar a nuestras hijas el amor y la pasión por la escaramuza mexicana.','Creció de un equipo competitivo a una hermandad — compitiendo en nacionales mientras se presentaban por causas comunitarias como la concientización sobre el cáncer de mama y la leucemia.','En 2026 constituimos formalmente Ameyali Foundation, una organización sin fines de lucro de California dedicada a apoyar a niños dentro del espectro autista y a otros niños con necesidades especiales — a través del poder de los caballos y la herencia.']
-    }
-  },
-  team: {
-    title: {en:'Eight riders. One family.', es:'Ocho jinetes. Una familia.'},
-    sub: {en:'Daughters, sisters, and friends from the South Bay — around a shared love of escaramuza.', es:'Hijas, hermanas y amigas del South Bay — unidas por el amor a la escaramuza.'},
-    items: {
-      en:['Eight riders in full traje charro, choreographed at speed — the team still competes and rides for nationals.','Led by Evon Munoz (CEO and founder) and Xochil Marquez (CFO and secretary).','Every performance and every booking now funds the foundation\'s work with children on the autism spectrum.'],
-      es:['Ocho jinetes en traje charro completo, coreografiadas a velocidad — el equipo sigue compitiendo y cabalgando por los nacionales.','Dirigida por Evon Munoz (directora general y fundadora) y Xochil Marquez (directora financiera y secretaria).','Cada presentación y cada reservación ahora financia el trabajo de la fundación con niños dentro del espectro autista.']
+      en:['Founded March 12, 2019 — a small group of South Bay families came together to teach our daughters the love and passion of Mexican escaramuza.','Eight riders in full traje charro, choreographed at speed. The team still competes and rides for nationals.','Led by Evon Munoz (CEO and founder) and Xochil Marquez (CFO and secretary).','In 2026 we formally incorporated Ameyali Foundation — a California nonprofit dedicated to supporting children on the autism spectrum and other kids with special needs, through the power of horses and heritage.'],
+      es:['Fundada el 12 de marzo de 2019 — un pequeño grupo de familias del South Bay se unió para enseñar a nuestras hijas el amor y la pasión por la escaramuza mexicana.','Ocho jinetes en traje charro completo, coreografiadas a velocidad. El equipo sigue compitiendo y cabalgando por los nacionales.','Dirigida por Evon Munoz (directora general y fundadora) y Xochil Marquez (directora financiera y secretaria).','En 2026 constituimos formalmente Ameyali Foundation — una organización sin fines de lucro de California dedicada a apoyar a niños dentro del espectro autista y a otros niños con necesidades especiales, a través del poder de los caballos y la herencia.']
     }
   },
   book: {
