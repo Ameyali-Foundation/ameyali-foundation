@@ -485,7 +485,42 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 .explore-tile.tile-grass:hover{border-color:var(--grass)}
 .explore-tile.tile-grass::before{background:linear-gradient(90deg, var(--grass), var(--teal))}
 
-</style>
+
+/* ============================================================
+   Hero drifting-dust animation
+   ============================================================ */
+.hero-img{animation:heroZoom 30s ease-in-out infinite alternate;transform-origin:50% 40%}
+@keyframes heroZoom{0%{transform:scale(1.05)}100%{transform:scale(1.10)}}
+
+.hero-dust{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.hero-dust span{position:absolute;bottom:-24px;width:6px;height:6px;border-radius:50%;background:radial-gradient(circle,rgba(255,224,168,.85) 0%,rgba(255,224,168,.05) 70%,transparent 100%);opacity:0;animation:heroDust 9s linear infinite;will-change:transform,opacity}
+.hero-dust span:nth-child(1) {left:12%;animation-delay:0s;   animation-duration:9s;   width:8px;height:8px}
+.hero-dust span:nth-child(2) {left:22%;animation-delay:1.4s; animation-duration:11s;  width:4px;height:4px}
+.hero-dust span:nth-child(3) {left:38%;animation-delay:2.6s; animation-duration:8.5s}
+.hero-dust span:nth-child(4) {left:47%;animation-delay:4.2s; animation-duration:12s;  width:5px;height:5px}
+.hero-dust span:nth-child(5) {left:58%;animation-delay:.8s;  animation-duration:9.5s; width:7px;height:7px}
+.hero-dust span:nth-child(6) {left:68%;animation-delay:3.1s; animation-duration:10s}
+.hero-dust span:nth-child(7) {left:76%;animation-delay:5s;   animation-duration:8s;   width:4px;height:4px}
+.hero-dust span:nth-child(8) {left:85%;animation-delay:2s;   animation-duration:11.5s;width:6px;height:6px}
+.hero-dust span:nth-child(9) {left:29%;animation-delay:6s;   animation-duration:9s;   width:5px;height:5px}
+.hero-dust span:nth-child(10){left:64%;animation-delay:4.6s; animation-duration:10.5s;width:8px;height:8px}
+.hero-dust span:nth-child(11){left:15%;animation-delay:7.2s; animation-duration:9.5s}
+.hero-dust span:nth-child(12){left:52%;animation-delay:5.5s; animation-duration:12s;  width:4px;height:4px}
+@keyframes heroDust{0%{transform:translate(0,0);opacity:0}15%{opacity:.85}85%{opacity:.6}100%{transform:translate(-30px,-520px);opacity:0}}
+
+.hero-content .eyebrow{animation:heroFadeIn .9s .05s ease-out both}
+.hero-content h1.display{animation:heroFadeIn 1.1s .20s ease-out both}
+.hero-content .hero-sub{animation:heroFadeIn 1.1s .35s ease-out both}
+.hero-content .hero-ctas{animation:heroFadeIn 1.1s .50s ease-out both}
+@keyframes heroFadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-img,.hero-dust span,
+  .hero-content .eyebrow,.hero-content h1.display,.hero-content .hero-sub,.hero-content .hero-ctas{
+    animation:none !important;transform:none !important;opacity:1 !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -516,6 +551,11 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 <header class="hero" id="top">
   <div class="hero-backdrop" aria-hidden="true"></div>
   <div class="hero-img" role="img" aria-label="An escaramuza rider in a lavender dress and sombrero, emerging from arena dust at golden hour."></div>
+  <div class="hero-dust" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
     <p class="eyebrow" style="color:#E6C57A" data-en="Escaramuza Ameyali · A California Nonprofit" data-es="Escaramuza Ameyali · Una Fundación de California">Escaramuza Ameyali · A California Nonprofit</p>
