@@ -1343,22 +1343,47 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   });
 </script>
 <script>
-  /* Force video-band autoplay: browsers require muted + a JS .play() call in some cases. */
+  /* Force video-band autoplay. The single-attempt version raced media loading:
+     .play() at DOMContentLoaded fires before readyState hits HAVE_CURRENT_DATA (2)
+     and the promise rejects silently. Retry .play() at every stage instead. */
   (function(){
     const v = document.querySelector('.video-band-video');
     if (!v) return;
+    v.defaultMuted = true;
     v.muted = true;
     v.playsInline = true;
-    const tryPlay = () => v.play().catch(() => {});
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-      tryPlay();
-    } else {
-      document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
+    v.setAttribute('muted','');
+    v.setAttribute('playsinline','');
+
+    const tryPlay = () => { if (v.paused) v.play().catch(() => {}); };
+
+    /* 1. Fire right away if the media is already playable. */
+    if (v.readyState >= 2) tryPlay();
+
+    /* 2. Retry on each media-load milestone. */
+    v.addEventListener('loadedmetadata', tryPlay);
+    v.addEventListener('loadeddata', tryPlay);
+    v.addEventListener('canplay', tryPlay);
+    v.addEventListener('canplaythrough', tryPlay);
+
+    /* 3. Retry when the video section enters the viewport. */
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) tryPlay(); });
+      }, { threshold: 0.15 }).observe(v);
     }
-    /* Fallback: if still paused after user's first interaction, try again. */
-    const kick = () => { if (v.paused) tryPlay(); };
+
+    /* 4. If the video pauses unexpectedly (tab visibility change, etc.), resume. */
+    v.addEventListener('pause', () => {
+      if (!v.ended) setTimeout(tryPlay, 100);
+    });
+
+    /* 5. Nudge the browser to actually start fetching bytes. */
+    try { v.load(); } catch(e) {}
+
+    /* 6. Belt-and-suspenders: retry on the user's first interaction anywhere. */
     ['click','touchstart','scroll','keydown'].forEach(e =>
-      document.addEventListener(e, kick, { once: true, passive: true })
+      document.addEventListener(e, tryPlay, { once: true, passive: true })
     );
   })();
 </script>
