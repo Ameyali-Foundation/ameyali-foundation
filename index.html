@@ -566,6 +566,18 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 .event-cta::after{content:'→';transition:transform .2s ease}
 .event:hover .event-cta::after{transform:translateX(3px)}
 
+
+/* Make the whole event card a click target (stretched-link pattern). */
+.event{cursor:pointer}
+.event-cta{position:relative}
+.event-cta::before{content:'';position:absolute;inset:0;transform:translate(0,0);z-index:5;pointer-events:auto}
+/* Keep the visual "→" arrow indicator sitting above the invisible click area. */
+.event-cta::after{position:relative;z-index:6}
+/* Focus ring on keyboard nav for the whole card */
+.event:focus-within{outline:2.5px solid var(--pomegranate);outline-offset:3px;border-radius:16px}
+.event-cta:focus{outline:none}
+.event-cta::before{border-radius:16px}
+
 </style>
 </head>
 <body>
@@ -610,7 +622,7 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
     <p class="hero-sub" data-en="Ameyali Foundation is a Gilroy-based nonprofit and escaramuza team, founded to support children on the autism spectrum through the power of horses, tradition, and community." data-es="Ameyali Foundation es una organización sin fines de lucro y equipo de escaramuza basado en Gilroy, fundada para apoyar a niños dentro del espectro autista a través del poder de los caballos, la tradición y la comunidad.">Ameyali Foundation is a Gilroy-based nonprofit and escaramuza team, founded to support children on the autism spectrum through the power of horses, tradition, and community.</p>
     <div class="hero-ctas">
       <a href="#donate" class="btn-primary" data-en="Donate" data-es="Donar">Donate</a>
-      <button type="button" class="btn-ghost" data-open-info="story" data-en="See our story" data-es="Conoce nuestra historia">See our story</button>
+      <!-- <button type="button" class="btn-ghost" data-open-info="story" data-en="See our story" data-es="Conoce nuestra historia">See our story</button> -->
     </div>
   </div>
 </header>
