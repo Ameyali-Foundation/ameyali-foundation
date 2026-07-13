@@ -584,11 +584,9 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 .performance-band{position:relative;background:#1a1108;overflow:hidden;isolation:isolate}
 .performance-band-inner{position:relative;width:100%;aspect-ratio:21/9;min-height:280px;max-height:64vh}
 .performance-band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.performance-band .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,17,8,.55) 0%,rgba(26,17,8,.05) 40%,rgba(26,17,8,0) 65%,rgba(26,17,8,.65) 100%),linear-gradient(270deg,rgba(26,17,8,.55) 0%,rgba(26,17,8,.05) 40%,rgba(26,17,8,0) 65%);pointer-events:none;z-index:1}
-.performance-band .cap{position:absolute;left:0;right:0;top:32px;padding:0 24px;color:var(--cream);z-index:2;max-width:1200px;margin:0 auto;text-align:right}
-@media(min-width:900px){.performance-band .cap{top:56px;padding:0 48px}}
-.performance-band .cap .eyebrow{color:var(--gold);opacity:.95;display:inline-block}
-.performance-band .cap h2{font-size:clamp(1.7rem,1.3rem + 1.9vw,2.6rem);color:var(--cream);margin-top:10px;max-width:14ch;margin-left:auto;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.performance-band-header{padding:72px 0 40px;background:var(--ink)}
+.performance-band-header .eyebrow{color:var(--gold);display:block;margin-bottom:12px}
+.performance-band-header h2{font-size:clamp(1.9rem,1.4rem + 2.2vw,3rem);color:var(--cream);max-width:22ch}
 
 </style>
 </head>
@@ -711,16 +709,24 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
   <div class="wrap">
     <span class="metrics-eyebrow" data-en="By the numbers" data-es="En cifras">By the numbers</span>
     <div class="metrics-grid">
+      <!-- Metrics 1 and 2 hidden until we have real numbers to report.
+           - "12+ kids on the autism spectrum" was a placeholder guess (invented,
+             not sourced from any record). Restore once the team confirms an
+             actual count.
+           - "4 public performances a year" was also a placeholder; the team
+             flagged the number as likely wrong. Restore once verified.
+           Uncomment the <div class="metric reveal"> blocks below to bring them
+           back. -->
+      <!--
       <div class="metric reveal">
         <span class="metric-num">12<span class="plus">+</span></span>
         <p class="metric-label" data-en="Kids on the autism spectrum we ride for" data-es="Niños dentro del espectro autista por quienes cabalgamos">Kids on the autism spectrum we ride for</p>
-        <p class="metric-note" data-en="Placeholder — update with real count" data-es="Marcador — actualizar">Placeholder</p>
       </div>
       <div class="metric reveal">
         <span class="metric-num">4</span>
         <p class="metric-label" data-en="Public performances a year across California" data-es="Actuaciones públicas al año en California">Public performances a year across California</p>
-        <p class="metric-note" data-en="Placeholder — update with real count" data-es="Marcador — actualizar">Placeholder</p>
       </div>
+      -->
       <div class="metric reveal">
         <span class="metric-num">1</span>
         <p class="metric-label" data-en="Arena, one familia charra, one shared heritage" data-es="Una arena, una familia charra, una herencia compartida">Arena, one familia charra, one shared heritage</p>
@@ -780,13 +786,14 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 
 <!-- PERFORMANCE BAND — escaramuza in action; bridges Programs -> Events. -->
 <section class="performance-band" id="performance">
-  <div class="performance-band-inner">
-    <video class="video-band-video" src="media/riders.mp4" autoplay muted loop playsinline preload="auto" poster="brand/hero-2026-06-29-extended.jpg" aria-label="Escaramuza Ameyali riders in the arena"></video>
-    <div class="veil" aria-hidden="true"></div>
-    <div class="cap">
+  <div class="performance-band-header">
+    <div class="wrap">
       <span class="eyebrow" data-en="The escaramuza" data-es="La escaramuza">The escaramuza</span>
       <h2 class="display" data-en="Eight riders. One arena." data-es="Ocho jinetes. Una arena.">Eight riders. One arena.</h2>
     </div>
+  </div>
+  <div class="performance-band-inner">
+    <video class="video-band-video" src="media/riders.mp4" autoplay muted loop playsinline preload="auto" poster="brand/hero-2026-06-29-extended.jpg" aria-label="Escaramuza Ameyali riders in the arena"></video>
   </div>
 </section>
 
