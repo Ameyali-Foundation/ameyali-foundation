@@ -3,67 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ameyali Foundation — Back soon</title>
-<meta name="robots" content="noindex">
-<meta name="description" content="The Ameyali Foundation website is temporarily offline for maintenance. We'll be back shortly.">
+<script src="/site-status.js"></script>
+<title>The Team — Ameyali Foundation</title>
+<meta name="description" content="Meet the riders of Escaramuza Ameyali — the team behind the tradition — and how to book them for your event.">
+<link rel="icon" type="image/png" href="brand/escaramuza_ameyali_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..800,50..100&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#2A1D12;
-  --saddle:#5A3D24;
-  --cream:#F5EDDC;
-  --sand:#E5D5B7;
-  --grass:#5C7548;
-  --gold:#FBC647;
-  --rule:rgba(42,29,18,.14);
+  --ink:#2A1D12;--saddle:#5A3D24;--bark:#7A5638;--cream:#F5EDDC;--cream-2:#EFE4CC;
+  --sand:#E5D5B7;--grass:#5C7548;--grass-deep:#4A6238;--marigold:#F0A20D;
+  --rose-blush:#F1D3D6;--rule:rgba(42,29,18,.14);
+  --shadow:0 1px 2px rgba(42,29,18,.06), 0 12px 32px -8px rgba(42,29,18,.18);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family:'DM Sans', system-ui, -apple-system, sans-serif;
-  color:var(--ink);
-  background:
-    radial-gradient(1200px 600px at 50% -10%, #FBF4E4, transparent 60%),
-    var(--cream);
-  display:flex;align-items:center;justify-content:center;
-  min-height:100vh;padding:2rem;text-align:center;
-  -webkit-font-smoothing:antialiased;
-}
-.card{max-width:34rem}
-.eyebrow{
-  font-family:'Fraunces', Georgia, serif;
-  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--saddle);margin-bottom:1.25rem;
-}
-h1{
-  font-family:'Fraunces', Georgia, serif;
-  font-variation-settings:'opsz' 144, 'SOFT' 60, 'wght' 420;
-  font-weight:420;letter-spacing:-0.02em;line-height:1.05;
-  font-size:clamp(2.1rem, 1.6rem + 3vw, 3.4rem);
-  margin-bottom:1.1rem;
-}
-p{
-  font-size:clamp(1.02rem, 1rem + .3vw, 1.15rem);
-  line-height:1.6;color:var(--saddle);max-width:40ch;margin:0 auto;
-}
-.rule{
-  width:64px;height:4px;border-radius:2px;margin:1.75rem auto;
-  background:linear-gradient(90deg, var(--grass), var(--gold));
-}
-.contact{margin-top:2rem;font-size:.95rem;color:var(--saddle)}
-.contact a{color:var(--grass);text-decoration:none;border-bottom:1px solid var(--rule)}
-.contact a:hover{border-bottom-color:var(--grass)}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+body{font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:2.5px solid var(--grass);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+@media (min-width:900px){.wrap{padding:0 48px}}
+
+.display{font-family:'Fraunces',Georgia,serif;font-variation-settings:'opsz' 144,'SOFT' 60,'wght' 400;letter-spacing:-.02em;line-height:1.02}
+.eyebrow{font-family:'Fraunces',Georgia,serif;font-variation-settings:'opsz' 9,'SOFT' 100,'wght' 500;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--saddle)}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(245,237,220,.92);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--rule)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1200px;margin:0 auto}
+@media (min-width:900px){.nav-inner{padding:16px 48px}}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-variation-settings:'opsz' 24,'SOFT' 80,'wght' 500;font-size:1.05rem}
+.brand-mark{width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 0 0 1.5px var(--grass)}
+.nav-actions{display:flex;align-items:center;gap:14px}
+.lang-toggle{display:inline-flex;background:transparent;border:1px solid var(--rule);border-radius:999px;padding:3px;font-size:.82rem}
+.lang-toggle button{padding:5px 11px;border-radius:999px;color:var(--saddle);font-weight:500;transition:all .2s ease}
+.lang-toggle button.active{background:var(--ink);color:var(--cream)}
+.back-link{display:inline-flex;align-items:center;gap:7px;font-size:.92rem;font-weight:600;color:var(--saddle);transition:color .2s ease}
+.back-link:hover{color:var(--ink)}
+.back-link::before{content:'←';transition:transform .2s ease}
+.back-link:hover::before{transform:translateX(-3px)}
+
+/* Header */
+.team-header{padding:64px 0 12px}
+.team-header h1{font-size:clamp(2.4rem,1.8rem + 3vw,4rem);margin-top:14px;color:var(--ink)}
+.team-header p{color:var(--saddle);max-width:58ch;margin-top:16px;font-size:1.08rem}
+
+/* Rider cards */
+.riders{padding:48px 0 80px}
+.riders-grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:640px){.riders-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1020px){.riders-grid{grid-template-columns:repeat(3,1fr);gap:28px}}
+.rider-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s ease}
+.rider-card:hover{transform:translateY(-4px)}
+.rider-photo{position:relative;aspect-ratio:3/4;background:linear-gradient(160deg,var(--sand),var(--rose-blush));overflow:hidden}
+.rider-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.rider-photo.missing::after{content:attr(data-initial);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',Georgia,serif;font-size:4rem;color:rgba(42,29,18,.28)}
+.rider-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.rider-body h3{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:1.3rem;color:var(--ink)}
+.rider-meta{font-size:.85rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--grass-deep)}
+.rider-bio{font-size:.95rem;line-height:1.6;color:var(--saddle)}
+
+/* Booking strip */
+.riders-book{margin-top:56px;background:var(--ink);color:var(--cream);border-radius:20px;padding:36px 32px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+.riders-book h3{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.4rem,1.2rem + 1vw,1.9rem);max-width:24ch}
+.riders-book p{color:rgba(245,237,220,.75);font-size:.95rem;max-width:52ch;margin-top:8px}
+.riders-book-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.riders-book-ctas a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.93rem;background:var(--marigold);color:var(--ink);transition:transform .15s ease}
+.riders-book-ctas a.ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(245,237,220,.4)}
+.riders-book-ctas a:hover{transform:translateY(-1px)}
+
+footer{background:var(--ink);color:rgba(245,237,220,.6);padding:40px 0;font-size:.88rem}
+.footer-in{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+.footer-in a{color:#E6C57A;font-weight:600}
 </style>
 </head>
 <body>
-  <main class="card">
-    <div class="eyebrow">Ameyali Foundation</div>
-    <h1>We&rsquo;ll be back soon</h1>
-    <div class="rule" aria-hidden="true"></div>
-    <p>Our website is temporarily offline for maintenance. Thank you for your patience &mdash; please check back shortly.</p>
-    <p class="contact">In the meantime, reach us at <a href="mailto:Ameyaliescaramuza@gmail.com">Ameyaliescaramuza@gmail.com</a></p>
-  </main>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="Ameyali Foundation, home">
+      <img class="brand-mark" src="brand/escaramuza_ameyali_logo.png" alt="" aria-hidden="true">
+      <span>Ameyali Foundation</span>
+    </a>
+    <div class="nav-actions">
+      <a href="index.html" class="back-link" data-en="Back to site" data-es="Volver al sitio">Back to site</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="active" data-set-lang="en" aria-pressed="true">EN</button>
+        <button data-set-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="team-header">
+  <div class="wrap">
+    <p class="eyebrow" data-en="About the team" data-es="Sobre el equipo">About the team</p>
+    <h1 class="display" data-en="The riders behind the tradition." data-es="Las jinetes detrás de la tradición.">The riders behind the tradition.</h1>
+    <p data-en="Escaramuza Ameyali was founded in 2019 by South Bay families passing on the love of Mexican escaramuza. Every rider trains year-round — and every performance they give funds the foundation's work with children." data-es="Escaramuza Ameyali fue fundada en 2019 por familias del South Bay que transmiten el amor por la escaramuza mexicana. Cada jinete entrena todo el año — y cada presentación que dan financia el trabajo de la fundación con los niños.">Escaramuza Ameyali was founded in 2019 by South Bay families passing on the love of Mexican escaramuza. Every rider trains year-round &mdash; and every performance they give funds the foundation&rsquo;s work with children.</p>
+  </div>
+</header>
+
+<main class="riders">
+  <div class="wrap">
+    <div class="riders-grid">
+      <article class="rider-card">
+        <div class="rider-photo" data-initial="M"><img src="media/riders/melany-lara.jpg" alt="Melany Lara in escaramuza dress on horseback" loading="lazy" onerror="this.parentElement.classList.add('missing');this.remove()"></div>
+        <div class="rider-body">
+          <h3>Melany Lara</h3>
+          <p class="rider-meta" data-en="17 · Riding since age 10" data-es="17 · Cabalga desde los 10">17 &middot; Riding since age 10</p>
+          <p class="rider-bio" data-en="Charrería has become my passion. It has given me a second family, unforgettable memories, and taught me the value of dedication, teamwork, and pride in our traditions." data-es="La charrería se ha vuelto mi pasión. Me ha dado una segunda familia, recuerdos inolvidables, y me ha enseñado el valor de la dedicación, el trabajo en equipo y el orgullo por nuestras tradiciones.">Charrería has become my passion. It has given me a second family, unforgettable memories, and taught me the value of dedication, teamwork, and pride in our traditions.</p>
+        </div>
+      </article>
+      <article class="rider-card">
+        <div class="rider-photo" data-initial="D"><img src="media/riders/daniela-batres.jpg" alt="Daniela Batres in a pink escaramuza dress on her white horse" loading="lazy" onerror="this.parentElement.classList.add('missing');this.remove()"></div>
+        <div class="rider-body">
+          <h3>Daniela Batres</h3>
+          <p class="rider-meta" data-en="17 · 9 years with Ameyali" data-es="17 · 9 años con Ameyali">17 &middot; 9 years with Ameyali</p>
+          <p class="rider-bio" data-en="Escaramuza has been my passion since I was 8, and it has shaped me into the person I am today. It taught me to be a problem solver and a team player. My horses are Duvalin and Luna." data-es="La escaramuza ha sido mi pasión desde los 8 años, y me ha formado como la persona que soy hoy. Me enseñó a resolver problemas y a trabajar en equipo. Mis caballos son Duvalin y Luna.">Escaramuza has been my passion since I was 8, and it has shaped me into the person I am today. It taught me to be a problem solver and a team player. My horses are Duvalin and Luna.</p>
+        </div>
+      </article>
+      <article class="rider-card">
+        <div class="rider-photo" data-initial="A"><img src="media/riders/rider-3.jpg" alt="An Ameyali rider in a lavender escaramuza dress mid-performance" loading="lazy" onerror="this.parentElement.classList.add('missing');this.remove()"></div>
+        <div class="rider-body">
+          <p class="rider-meta" data-en="19 · Riding since age 9" data-es="19 · Cabalga desde los 9">19 &middot; Riding since age 9</p>
+          <p class="rider-bio" data-en="My passion for horses and my dedication to escaramuza have helped me develop confidence, discipline, and a deep appreciation for this cherished tradition." data-es="Mi pasión por los caballos y mi dedicación a la escaramuza me han ayudado a desarrollar confianza, disciplina y un profundo aprecio por esta querida tradición.">My passion for horses and my dedication to escaramuza have helped me develop confidence, discipline, and a deep appreciation for this cherished tradition.</p>
+        </div>
+      </article>
+      <article class="rider-card">
+        <div class="rider-photo" data-initial="X"><img src="media/riders/ximena-jimenez.jpg" alt="Ximena Jimenez waving from horseback in a teal and black escaramuza dress" loading="lazy" onerror="this.parentElement.classList.add('missing');this.remove()"></div>
+        <div class="rider-body">
+          <h3>Ximena Jimenez</h3>
+          <p class="rider-meta" data-en="16 · Riding since age 5" data-es="16 · Cabalga desde los 5">16 &middot; Riding since age 5</p>
+          <p class="rider-bio" data-en="This is my second year as an escaramuza and as part of Ameyali. I can't wait to see what next season has in store for me!" data-es="Este es mi segundo año como escaramuza y como parte de Ameyali. ¡No puedo esperar a ver lo que la próxima temporada me tiene preparado!">This is my second year as an escaramuza and as part of Ameyali. I can&rsquo;t wait to see what next season has in store for me!</p>
+        </div>
+      </article>
+      <article class="rider-card">
+        <div class="rider-photo" data-initial="J"><img src="media/riders/julissa-munoz.jpg" alt="Julissa Munoz in a maroon escaramuza dress with floral embroidery on horseback" loading="lazy" onerror="this.parentElement.classList.add('missing');this.remove()"></div>
+        <div class="rider-body">
+          <h3>Julissa Munoz</h3>
+          <p class="rider-meta" data-en="17 · Riding since age 8" data-es="17 · Cabalga desde los 8">17 &middot; Riding since age 8</p>
+          <p class="rider-bio" data-en="Being an escaramuza taught me to be fearless. I grew up afraid of animals — horses changed that completely. Riding has become a form of therapy and a passion, and I love teaching young children to ride." data-es="Ser escaramuza me enseñó a no tener miedo. Crecí con temor a los animales — los caballos lo cambiaron por completo. Montar se ha vuelto una forma de terapia y una pasión, y me encanta enseñar a los niños pequeños a montar.">Being an escaramuza taught me to be fearless. I grew up afraid of animals &mdash; horses changed that completely. Riding has become a form of therapy and a passion, and I love teaching young children to ride.</p>
+        </div>
+      </article>
+      <article class="rider-card">
+        <div class="rider-photo" data-initial="V"><img src="media/riders/valentina-sabino.jpg" alt="Valentina Sabino in a red escaramuza dress standing beside her horse" loading="lazy" onerror="this.parentElement.classList.add('missing');this.remove()"></div>
+        <div class="rider-body">
+          <h3>Valentina Sabino</h3>
+          <p class="rider-meta" data-en="16 · Riding since age 5" data-es="16 · Cabalga desde los 5">16 &middot; Riding since age 5</p>
+          <p class="rider-bio" data-en="I'm passionate about riding because it's a way to be free from everyday life. I love being around horses." data-es="Me apasiona montar porque es una manera de liberarme de la vida diaria. Me encanta estar rodeada de caballos.">I&rsquo;m passionate about riding because it&rsquo;s a way to be free from everyday life. I love being around horses.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="riders-book">
+      <div>
+        <h3 data-en="Book the team for your event." data-es="Reserva al equipo para tu evento.">Book the team for your event.</h3>
+        <p data-en="Local performances start at a $500 minimum donation, within 50 miles of Gilroy, with at least 2 weeks' notice." data-es="Las presentaciones locales comienzan con una donación mínima de $500, dentro de 50 millas de Gilroy, con al menos 2 semanas de anticipación.">Local performances start at a $500 minimum donation, within 50 miles of Gilroy, with at least 2 weeks&rsquo; notice.</p>
+      </div>
+      <div class="riders-book-ctas">
+        <a href="mailto:Ameyaliescaramuza@gmail.com" data-en="Email us" data-es="Escríbenos">Email us</a>
+        <a class="ghost" href="tel:+14085908944">(408) 590-8944</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-in">
+    <span data-en="© 2026 Ameyali Foundation. All rights reserved." data-es="© 2026 Ameyali Foundation. Todos los derechos reservados.">© 2026 Ameyali Foundation. All rights reserved.</span>
+    <a href="index.html" data-en="Back to site →" data-es="Volver al sitio →">Back to site →</a>
+  </div>
+</footer>
+
+<script>
+const htmlEl = document.documentElement;
+const langButtons = document.querySelectorAll('[data-set-lang]');
+function setLang(lang){
+  htmlEl.setAttribute('data-lang', lang);
+  htmlEl.setAttribute('lang', lang);
+  document.querySelectorAll('[data-en],[data-es]').forEach(el => {
+    const t = el.getAttribute('data-' + lang);
+    if (t !== null) el.textContent = t;
+  });
+  langButtons.forEach(b => {
+    const a = b.getAttribute('data-set-lang') === lang;
+    b.classList.toggle('active', a); b.setAttribute('aria-pressed', a);
+  });
+}
+langButtons.forEach(b => b.addEventListener('click', () => setLang(b.getAttribute('data-set-lang'))));
+</script>
 </body>
 </html>

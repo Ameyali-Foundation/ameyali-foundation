@@ -33,6 +33,14 @@ Just open `index.html` in any browser — no server needed.
 ## Cloudflare Pages
 Connected under ameyaliescaramuza@gmail.com. Build command: none. Output dir: /
 Every push to main auto-deploys. Dashboard: https://dash.cloudflare.com/df8f4455a00d8cd5e438ba54d2957086/pages
+
+## Temporarily pause the site
+
+The site is live by default. To show the temporary maintenance page, change
+`maintenanceMode` from `false` to `true` in `site-status.js`, commit, and push.
+Set it back to `false` and deploy to restore the site. The maintenance copy lives
+in `maintenance.html`; it is kept as an intentional feature flag, not as a
+replacement for the homepage.
 ## Domain renewal
 ameyalifoundation.org is on Cloudflare (~$10/yr). Add a card under Billing for auto-renewal.
 ---
