@@ -79,7 +79,7 @@ h3.display{font-size:clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem)}
 .nav-links a:hover::after{transform:scaleX(1)}
 @media (min-width:920px){.nav-links{display:flex}}
 .lang-toggle{display:inline-flex;background:transparent;border:1px solid var(--rule);border-radius:999px;padding:3px;font-size:.82rem;letter-spacing:.04em}
-.lang-toggle button{padding:5px 11px;border-radius:999px;color:var(--saddle);font-weight:500;transition:all .2s ease}
+.lang-toggle button{padding:5px 11px;border-radius:999px;color:var(--saddle);font-weight:500;transition:background .2s ease, color .2s ease}
 .lang-toggle button.active{background:var(--ink);color:var(--cream)}
 .btn-donate{display:inline-flex;align-items:center;gap:8px;background:var(--grass);color:var(--cream);padding:9px 18px;border-radius:999px;font-weight:600;font-size:.92rem;transition:transform .15s ease, background .2s ease;box-shadow:0 1px 0 rgba(255,255,255,.15) inset, 0 6px 16px -6px rgba(92,117,72,.5)}
 .btn-donate:hover{background:var(--grass-deep);transform:translateY(-1px)}
@@ -333,7 +333,7 @@ footer{background:var(--ink);color:rgba(245,237,220,.7);padding:64px 0 32px}
 .modal-sub{color:var(--saddle);margin-bottom:26px;font-size:1rem;max-width:42ch}
 .amount-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
 @media (min-width:480px){.amount-grid{grid-template-columns:repeat(4,1fr)}}
-.amount-btn{padding:14px 8px;border-radius:8px;background:var(--cream-2);border:1.5px solid var(--rule);font-family:'Fraunces',serif;font-variation-settings:'opsz' 36, 'SOFT' 70, 'wght' 500;font-size:1.15rem;color:var(--ink);transition:all .18s ease;text-align:center}
+.amount-btn{padding:14px 8px;border-radius:8px;background:var(--cream-2);border:1.5px solid var(--rule);font-family:'Fraunces',serif;font-variation-settings:'opsz' 36, 'SOFT' 70, 'wght' 500;font-size:1.15rem;color:var(--ink);transition:border-color .18s ease, background .18s ease, color .18s ease;text-align:center}
 .amount-btn:hover{border-color:var(--grass);background:var(--sand)}
 .amount-btn.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
 .amount-custom{position:relative;margin-bottom:22px}
